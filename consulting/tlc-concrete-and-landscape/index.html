@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TLC Concrete and Landscape — What We Found | Nick Dahlhoff</title>
+  <meta name="description" content="Your perfect 5-star reputation shows exceptional quality and communication — discover how AI can systematically scale what you've already built.">
+  <meta property="og:title" content="TLC Concrete and Landscape — What We Found | Nick Dahlhoff">
+  <meta property="og:description" content="Your perfect 5-star reputation shows exceptional quality and communication — discover how AI can systematically scale what you've already built.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #FEFCF8;
+      --color-surface: #FFFFFF;
+      --color-surface-alt: #F5F0E8;
+      --color-text: #1A1A1A;
+      --color-text-secondary: #5A5A5A;
+      --color-text-light: #8A8A8A;
+      --color-accent: #9b51e0;
+      --color-accent-hover: #8240c7;
+      --color-accent-light: #f3e8ff;
+      --color-accent-secondary: #7bdcb5;
+      --color-border: #E5E0D5;
+      --color-success: #2D6A4F;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.65;
+      color: var(--color-text);
+      background-color: var(--color-bg);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-sm {
+      padding: 60px 0;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 32px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      background-color: var(--color-accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.125rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--color-accent-hover);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      color: white;
+      max-width: 800px;
+      margin: 0 auto 24px auto;
+    }
+
+    .hero p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+    }
+
+    .hero .btn {
+      background-color: white;
+      color: var(--color-accent);
+    }
+
+    .hero .btn:hover {
+      background-color: var(--color-surface-alt);
+    }
+
+    /* Story Section */
+    .story {
+      background-color: var(--color-surface);
+    }
+
+    .story p {
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* What We Noticed Section */
+    .noticed {
+      background-color: var(--color-surface-alt);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .card {
+      background-color: var(--color-surface);
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--color-border);
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .card h3 {
+      color: var(--color-text);
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    /* Bigger Picture Section */
+    .bigger-picture {
+      background-color: var(--color-surface);
+    }
+
+    .outcome-list {
+      max-width: 800px;
+      margin: 48px auto 0 auto;
+    }
+
+    .outcome-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 32px;
+      padding: 24px;
+      background-color: var(--color-accent-light);
+      border-radius: 12px;
+      border-left: 4px solid var(--color-accent);
+    }
+
+    .outcome-icon {
+      font-size: 1.5rem;
+      margin-right: 16px;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .outcome-content h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+
+    .outcome-content p {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    /* About Section */
+    .about {
+      background-color: var(--color-surface-alt);
+    }
+
+    .about-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .about h3 {
+      text-align: center;
+      color: var(--color-accent);
+    }
+
+    .credential {
+      background-color: var(--color-surface);
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid var(--color-accent);
+      margin-top: 24px;
+    }
+
+    .credential p {
+      margin-bottom: 0;
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+
+    /* How It Works Section */
+    .how-it-works {
+      background-color: var(--color-surface);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 48px;
+    }
+
+    .step {
+      text-align: center;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background-color: var(--color-accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 auto 24px auto;
+    }
+
+    .step h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+
+    .step p {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    /* CTA Section */
+    .cta {
+      background-color: var(--color-accent-light);
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form {
+      background-color: var(--color-surface);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      margin: 40px 0;
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    .cal-option {
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .cal-option p {
+      margin-bottom: 0;
+      color: var(--color-text-secondary);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--color-text);
+      color: var(--color-surface);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer p {
+      margin-bottom: 8px;
+      color: var(--color-surface);
+    }
+
+    .footer a {
+      color: var(--color-accent-secondary);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Success message */
+    .success-message {
+      display: none;
+      background-color: var(--color-success);
+      color: white;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .section {
+        padding: 60px 0;
+      }
+
+      h1 {
+        font-size: 2.25rem;
+      }
+
+      h2 {
+        font-size: 1.875rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .form {
+        padding: 32px 24px;
+      }
+
+      .outcome-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .outcome-icon {
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      h1 {
+        font-size: 1.875rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .hero p,
+      .story p {
+        font-size: 1.125rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero section">
+    <!-- TODO: Replace with hero image - A confident contractor stands in the center of a beautifully organized job site where multiple concrete projects are progressing smoothly simultaneously. Crews work efficiently in the background on different decorative concrete installations. A tablet in the contractor's hands shows a clean, organized scheduling interface, while the overall scene conveys calm efficiency — no chaos, no rushing, just systematic excellence. The Michigan setting shows suburban homes with gorgeous outdoor living spaces being created. -->
+    <div class="container">
+      <h1>AI is revolutionizing how concrete contractors operate — and quality-focused businesses like yours are positioned to dominate</h1>
+      <p>Across Michigan, concrete contractors are discovering that AI can systematize operations, automate coordination, and scale the personal touch that builds 5-star reputations. You've already mastered the fundamentals that many struggle with.</p>
+      <a href="#cta" class="btn">Let's Talk About TLC Concrete and Landscape</a>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="story section">
+    <div class="container text-center">
+      <p>The concrete industry is experiencing a technological revolution. Contractors using AI-powered scheduling systems are eliminating weather coordination chaos, saving 15+ hours weekly on rescheduling calls. Smart material estimation tools are reducing waste by 25% while automated customer communication keeps clients informed without interrupting critical work phases. Meanwhile, your reputation shows you've solved the hardest challenge — consistently delivering quality work and exceptional service.</p>
+    </div>
+  </section>
+
+  <!-- What We Noticed Section -->
+  <section class="noticed section">
+    <div class="container">
+      <h2 class="text-center">Here's what we noticed about TLC Concrete and Landscape</h2>
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-icon">⭐</span>
+          <h3>Perfect 5-star reputation</h3>
+          <p>You've built a perfect 5.0-star reputation across 24 reviews with customers specifically praising your communication and responsiveness.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">💬</span>
+          <h3>Zero review responses</h3>
+          <p>Based on what we found, you haven't responded to any Google reviews, missing opportunities to boost SEO and deepen relationships.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">⏰</span>
+          <h3>Hours inconsistency</h3>
+          <p>It looks like your Friday hours show "8 AM to 1 AM" on Google — likely a data error that could confuse potential customers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bigger Picture Section -->
+  <section class="bigger-picture section">
+    <div class="container">
+      <h2 class="text-center">What if...</h2>
+      <div class="outcome-list">
+        <div class="outcome-item">
+          <span class="outcome-icon">🔄</span>
+          <div class="outcome-content">
+            <h4>Connected systems coordination</h4>
+            <p>AI scheduling that automatically adjusts for weather, coordinates material deliveries, and updates customers — eliminating the daily chaos of manual coordination</p>
+          </div>
+        </div>
+        <div class="outcome-item">
+          <span class="outcome-icon">📈</span>
+          <div class="outcome-content">
+            <h4>Amplified relationship building</h4>
+            <p>Automated review response systems and customer communication flows that scale your proven personal touch across every interaction</p>
+          </div>
+        </div>
+        <div class="outcome-item">
+          <span class="outcome-icon">🎯</span>
+          <div class="outcome-content">
+            <h4>Intelligent business optimization</h4>
+            <p>Real-time job costing, predictive material ordering, and margin protection systems that maximize profitability on every project</p>
+          </div>
+        </div>
+        <div class="outcome-item">
+          <span class="outcome-icon">⏳</span>
+          <div class="outcome-content">
+            <h4>Time freedom for what matters</h4>
+            <p>Recover 20+ hours weekly from administrative tasks to focus on quality work, business growth, and the aspects of contracting you actually love</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about section-sm">
+    <div class="container">
+      <div class="about-content">
+        <h3>Who I am</h3>
+        <p>I'm Nick Dahlhoff, based in West Michigan. I help local businesses connect their systems, automate their processes, and use AI to work smarter. Every business is different — I start by understanding yours, then build exactly what you need.</p>
+        <div class="credential">
+          <p>AI systems builder specializing in small business operations — custom software, automation, and process improvement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works section">
+    <div class="container">
+      <h2 class="text-center">How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h4>Tell me what's going on</h4>
+          <p>Fill out a quick form or book a call. No commitment.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h4>I put together a plan</h4>
+          <p>Specific recommendations for your business.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h4>We get to work</h4>
+          <p>Most projects start on-site. You see results fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="cta" class="cta section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Interested? Let's have a conversation.</h2>
+        <div class="form">
+          <form id="contact-form">
+            <input type="hidden" name="business_slug" value="tlc-concrete-and-landscape">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="Tell me what's happening with your business..." required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn">Send Message</button>
+            </div>
+            <div id="success" class="success-message">
+              Thanks for reaching out! I'll get back to you within 24 hours.
+            </div>
+          </form>
+          <div class="cal-option">
+            <p>Or book a 30-minute call — no pitch, just a conversation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Nick Dahlhoff | West Michigan</p>
+      <p><a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
+      <p>© 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Form handling
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // TODO: Connect to Convex mutation
+      
+      // Show success message
+      document.getElementById('success').style.display = 'block';
+      
+      // Reset form
+      this.reset();
+      
+      // Scroll to success message
+      document.getElementById('success').scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      });
+    });
+  </script>
+</body>
+</html>
