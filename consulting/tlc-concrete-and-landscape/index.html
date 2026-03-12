@@ -184,9 +184,16 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
       margin: 0 auto 2rem auto;
       border: 3px solid var(--color-border);
+      overflow: hidden;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .about h2 {
@@ -513,7 +520,7 @@
   <!-- About Nick -->
   <section class="about">
     <div class="content">
-      <div class="about-photo" aria-hidden="true"></div>
+      <div class="about-photo"><img src="nick-headshot.png" alt="Nick Dahlhoff"></div>
       <h2>Who I am</h2>
       <p>I'm Nick Dahlhoff, based in West Michigan. I help local businesses connect their systems, automate their processes, and use AI to work smarter. Every business is different — I start by understanding yours, then build exactly what you need.</p>
       <p class="credential">AI systems builder specializing in small business operations — custom software, automation, and process improvement.</p>
