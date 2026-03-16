@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Auto Body | Nick Dahlhoff, AI Consulting</title>
+  <meta name="description" content="Custom systems and automation for City Auto Body in Grand Haven. One day on-site to build tools that save real time.">
+  <meta property="og:title" content="City Auto Body | Nick Dahlhoff, AI Consulting">
+  <meta property="og:description" content="Custom systems and automation for City Auto Body in Grand Haven. One day on-site to build tools that save real time.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #FDF6EC;
+      --color-surface: #FFFFFF;
+      --color-surface-alt: #F5EDE0;
+      --color-text: #2D2D2D;
+      --color-text-secondary: #8C8177;
+      --color-text-light: #A09890;
+      --color-accent: #D4853A;
+      --color-accent-hover: #B8652A;
+      --color-accent-light: #F5E6D4;
+      --color-border: #E5DDD3;
+      --color-success: #2D6A4F;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.7;
+      font-size: 1.125rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: var(--color-bg);
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+
+    .hero-inner {
+      max-width: 1280px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-text .subhead {
+      font-family: var(--font-body);
+      font-size: 1.2rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .cta-button:focus {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+
+    .hero-image-card {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(45, 45, 45, 0.08);
+    }
+
+    .hero-image-card img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* Body Sections */
+    .body-part1 {
+      background-color: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part1 .content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part1 .content p:first-child {
+      font-size: 1.25rem;
+      border-left: 3px solid rgba(212, 133, 58, 0.3);
+      padding-left: 1.25rem;
+    }
+
+    .body-part1 .content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .amber-rule {
+      max-width: 720px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid rgba(212, 133, 58, 0.2);
+    }
+
+    .body-part2 {
+      background-color: var(--color-surface-alt);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part2 .content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part2 .content p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* About Section */
+    .about {
+      background-color: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+      text-align: center;
+    }
+
+    .about-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .about h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+
+    .about-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-border);
+      margin-bottom: 1.5rem;
+    }
+
+    .about .bio {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .about .credential {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      background-color: var(--color-surface);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .how-it-works-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .how-it-works h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
+    }
+
+    .step {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      flex-shrink: 0;
+      width: 2rem;
+      line-height: 1.3;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-content strong {
+      font-weight: 600;
+    }
+
+    .pricing-block {
+      margin-top: 3rem;
+      padding: 1.5rem 2rem;
+      background-color: var(--color-accent-light);
+      border-radius: 12px;
+    }
+
+    .pricing-block p {
+      margin-bottom: 0.75rem;
+    }
+
+    .pricing-block p:last-child {
+      margin-bottom: 0;
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background-color: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .cta-grid {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .cta-card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .cta-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-card p {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: var(--color-text);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(212, 133, 58, 0.15);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    #formSuccess {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    #formSuccess h3 {
+      font-family: var(--font-display);
+      color: var(--color-success);
+      margin-bottom: 0.5rem;
+    }
+
+    .cal-card-text {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .cal-button {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+
+    .payment-button {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .payment-button:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .payment-button:focus {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+      padding: 2.5rem 24px;
+      text-align: center;
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: var(--color-text-secondary);
+      text-decoration: underline;
+      transition: color 0.2s ease;
+    }
+
+    footer a:hover {
+      color: var(--color-accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        min-height: auto;
+        padding: 40px 20px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text {
+        order: 1;
+        text-align: center;
+      }
+
+      .hero-image-card {
+        order: 2;
+        max-height: 50vh;
+      }
+
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .step {
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .cta-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1: Hero -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>103 reviews, a 4.6 rating, and customers who say you made their car look better than new.</h1>
+        <p class="subhead">That kind of reputation takes years to build. The systems behind it shouldn't take all your time to maintain.</p>
+        <a href="#contact" class="cta-button">Let's Talk About City Auto Body</a>
+      </div>
+      <div class="hero-image-card">
+        <!-- Hero image prompt: Warm pencil-and-ink illustration of a small-town auto body shop bay, technician stepping back to admire freshly repaired car, afternoon light, friendly dog near entrance -->
+        <img src="hero.png" alt="Illustration of an auto body shop technician admiring a freshly repaired car in a warmly lit garage bay">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Body Part 1 — Their Business -->
+  <section class="body-part1">
+    <div class="content">
+      <p>A few things stand out about City Auto Body. The range of work coming through the shop goes well beyond what the website lists. Collision repair is the core, but reviews tell the story of a team handling everything from fender rolling and dent removal to premium paint matching and full interior detailing. Customers don't just come back, they bring different vehicles over decades. One reviewer mentioned 25 years of loyalty.</p>
+      <p>The communication stands out too. Review after review mentions being kept informed throughout the repair process, getting detailed explanations of what's happening, and feeling genuinely cared for during a stressful time. People reference staff members by name. They describe having their car returned cleaner than when they dropped it off. The shop also hosts community events and has a dog that greets visitors. It's a business with real personality that people in Grand Haven clearly feel connected to.</p>
+    </div>
+  </section>
+
+  <hr class="amber-rule">
+
+  <!-- Section 2: Body Part 2 — The Offer -->
+  <section class="body-part2">
+    <div class="content">
+      <p>A lot of what fills the week at a shop your size doesn't need to be this hard. Whether it's status updates that still happen one phone call at a time, job tracking that lives in someone's memory, or parts ordering that means three trips to the counter before lunch. The tools to fix that exist now, and they don't require big software packages or months of setup. I come in for a day, learn how your shop actually operates, and build whatever saves the most time. Could be connecting your systems so information stops getting entered twice. Could be something I won't know until I see the workflow firsthand. Either way, it starts with a conversation.</p>
+    </div>
+  </section>
+
+  <!-- Section 3: About Nick -->
+  <section class="about">
+    <div class="about-inner">
+      <h2>Who I am</h2>
+      <img src="nick-headshot.png" alt="Nick Dahlhoff" class="about-photo">
+      <p class="bio">I'm Nick Dahlhoff, based in West Michigan. I help local businesses figure out where AI tools and better systems can actually save them time and money. Every business is different, so I start by understanding yours. Then I build exactly what you need.</p>
+      <p class="credential">AI systems builder for small businesses: custom software, automation, and process improvement.</p>
+    </div>
+  </section>
+
+  <!-- Section 4: How It Works -->
+  <section class="how-it-works">
+    <div class="how-it-works-inner">
+      <h2>Here's how it works</h2>
+
+      <div class="step">
+        <span class="step-number">1</span>
+        <div class="step-content">
+          <strong>We talk first.</strong> Quick call to understand your situation. No sales pitch. If it doesn't seem like a fit, I'll tell you.
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-number">2</span>
+        <div class="step-content">
+          <strong>I come to you.</strong> I spend half a day at your business: walking around, watching how things work, asking questions, mapping out your systems and figuring out where the biggest opportunities are.
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-number">3</span>
+        <div class="step-content">
+          <strong>I start building.</strong> The other half of the day, I work on your highest-priority issue. Could be quick wins you see results from immediately, or the start of something bigger.
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-number">4</span>
+        <div class="step-content">
+          <strong>You decide what's next.</strong> Some people just want the one day. Others want ongoing help building bigger systems. Either way works.
+        </div>
+      </div>
+
+      <div class="pricing-block">
+        <p><strong>One day of hands-on work, $750.</strong> That covers research, implementation, and a follow-up check-in.</p>
+        <p>For businesses that want to go deeper, ongoing project work is available. We figure that out together after the first day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: CTA -->
+  <section class="cta-section" id="contact">
+    <h2>Interested? Let's talk.</h2>
+
+    <div class="cta-grid">
+      <!-- Contact Form -->
+      <div class="cta-card">
+        <h3>Send a message</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(optional)">
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required placeholder="What's on your mind?"></textarea>
+          </div>
+          <input type="hidden" name="source" value="prospect_site">
+          <input type="hidden" name="slug" value="city-auto-body">
+          <!-- Honeypot -->
+          <input type="text" name="website" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off">
+          <button type="submit" class="cta-button form-submit">Send Message</button>
+        </form>
+        <div id="formSuccess">
+          <h3>Message sent.</h3>
+          <p>I'll get back to you soon.</p>
+        </div>
+      </div>
+
+      <!-- Cal.com Booking -->
+      <div class="cta-card">
+        <h3>Book a call</h3>
+        <p class="cal-card-text">No pitch, just a conversation. 30 minutes to see if there's a fit.</p>
+        <button
+          class="cta-button cal-button"
+          data-cal-namespace=""
+          data-cal-link="nickdahlhoff/30min"
+          data-cal-config='{"layout":"month_view"}'
+        >Book a 30-Minute Call</button>
+      </div>
+
+      <!-- Payment -->
+      <div class="cta-card">
+        <h3>Ready to go?</h3>
+        <p>Book your one-day engagement now.</p>
+        <a href="https://buy.stripe.com/test_8x214o5MnftB2bUbt7dfG00" target="_blank" rel="noopener" class="payment-button">Pay Now — $750</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Nick Dahlhoff | West Michigan</p>
+    <p><a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <!-- Cal.com embed script -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://app.cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}}});
+  </script>
+
+  <!-- Form submission -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('contactForm');
+      var success = document.getElementById('formSuccess');
+      var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+          }
+
+          var data = {
+            name: form.elements.name.value || undefined,
+            email: form.elements.email.value,
+            phone: form.elements.phone.value || undefined,
+            message: form.elements.message.value,
+            source: 'prospect_site',
+            slug: form.elements.slug.value,
+            website: form.elements.website.value || undefined,
+          };
+
+          fetch('https://calculating-platypus-531.convex.site/leads', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          })
+            .then(function(res) {
+              if (!res.ok) throw new Error('Submission failed');
+              form.style.display = 'none';
+              success.style.display = 'block';
+            })
+            .catch(function() {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+              }
+              alert('Something went wrong — please try again or email ndahlhoff10@gmail.com directly.');
+            });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

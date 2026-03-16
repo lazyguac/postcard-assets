@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Finale Deli & Bakeshop | Nick Dahlhoff, AI Consulting</title>
+  <meta name="description" content="Custom systems and automation for Grand Finale Deli & Bakeshop in Grand Haven, MI. On-site consulting to connect your tools, simplify operations, and save time across both locations.">
+  <meta property="og:title" content="Grand Finale Deli & Bakeshop | Nick Dahlhoff, AI Consulting">
+  <meta property="og:description" content="Custom systems and automation for Grand Finale Deli & Bakeshop in Grand Haven, MI. On-site consulting to connect your tools, simplify operations, and save time across both locations.">
+  <meta property="og:image" content="hero.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #FDF6EC;
+      --color-surface: #FFFFFF;
+      --color-surface-alt: #F5EDE0;
+      --color-text: #2D2D2D;
+      --color-text-secondary: #8C8177;
+      --color-text-light: #A09890;
+      --color-accent: #D4853A;
+      --color-accent-hover: #B8652A;
+      --color-accent-light: #F5E6D4;
+      --color-border: #E5DDD3;
+      --color-success: #2D6A4F;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.7;
+      font-size: 1.125rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: var(--color-bg);
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+
+    .hero-inner {
+      max-width: 1280px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-text .subhead {
+      font-family: var(--font-body);
+      font-size: 1.25rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .hero-image-card {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(45, 45, 45, 0.08);
+    }
+
+    .hero-image-card img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-cta:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-cta:focus {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    /* Body Section — Part 1 */
+    .body-part1 {
+      background-color: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part1 .content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part1 .content p:first-child {
+      font-size: 1.25rem;
+      border-left: 3px solid rgba(212, 133, 58, 0.3);
+      padding-left: 1.25rem;
+    }
+
+    .body-part1 .content p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Divider */
+    .section-divider {
+      max-width: 720px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid rgba(212, 133, 58, 0.2);
+    }
+
+    /* Body Section — Part 2 */
+    .body-part2 {
+      background-color: var(--color-surface-alt);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part2 .content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part2 .content p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* About Section */
+    .about {
+      background-color: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+      text-align: center;
+    }
+
+    .about .content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .about h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+
+    .about .headshot {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-border);
+      margin-bottom: 1.5rem;
+    }
+
+    .about .bio {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .about .credential {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      font-weight: 600;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      background-color: var(--color-surface);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .how-it-works .content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .how-it-works h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
+    }
+
+    .step {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      flex-shrink: 0;
+      width: 2rem;
+      text-align: center;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-content strong {
+      font-weight: 600;
+    }
+
+    .pricing-block {
+      margin-top: 3rem;
+      padding: 1.5rem 2rem;
+      background-color: var(--color-accent-light);
+      border-radius: 12px;
+    }
+
+    .pricing-block p {
+      margin-bottom: 0.75rem;
+    }
+
+    .pricing-block p:last-child {
+      margin-bottom: 0;
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background-color: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .cta-section .content {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .cta-card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .cta-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-card p {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.375rem;
+      color: var(--color-text);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--color-text);
+      background-color: var(--color-surface);
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(212, 133, 58, 0.15);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .honeypot {
+      position: absolute;
+      left: -9999px;
+    }
+
+    #formSuccess {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    #formSuccess p {
+      color: var(--color-success);
+      font-weight: 600;
+      font-size: 1.125rem;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+      padding: 2.5rem 24px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.25rem;
+    }
+
+    .footer a {
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer a:hover {
+      color: var(--color-accent-hover);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        min-height: auto;
+        padding: 40px 20px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .hero-text {
+        order: 1;
+        text-align: center;
+      }
+
+      .hero-image-card {
+        order: 2;
+        max-height: 50vh;
+      }
+
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .cta-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cta-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 480px;
+        justify-self: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1: Hero -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Two locations, a Bourdain sandwich, and customers who drive across town for your carrot cake.</h1>
+        <p class="subhead">You built something people genuinely love. The operational side can work just as well.</p>
+        <a href="#contact" class="btn-cta">Let's Talk About Grand Finale</a>
+      </div>
+      <div class="hero-image-card">
+        <!-- Hero image generated from prompt: warm pencil-and-ink illustration of bustling bakery display case -->
+        <img src="hero.png" alt="Warm illustration of a bustling bakery with decorated cakes, pastries, and golden loaves">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Body — Part 1 (Their Business) -->
+  <section class="body-part1">
+    <div class="content">
+      <p>Grand Finale has earned something most bakeries don't: customers who come back for events year after year. Wedding cakes, baby showers, birthdays. People describe working with you as a real experience, not just an order form. They get tasting boxes. They get suggestions that actually account for their dietary needs. They get follow-through. That kind of service built a 4.7-star reputation across 71 reviews and a 92% owner response rate that most businesses twice your size couldn't sustain.</p>
+      <p>The range is striking. The Grand Haven shop handles pastries, sandwiches, coffee, and custom orders. The Spring Lake bistro runs a full dining room with a wine list. Wholesale accounts. Catering. The muffuletta gets its own shoutouts. You're running what amounts to several businesses under one name, each with its own operational rhythm.</p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- Section 2: Body — Part 2 (The Offer) -->
+  <section class="body-part2">
+    <div class="content">
+      <p>For a business running two locations with custom orders, retail, wholesale, and a full-service bistro, there's a lot of information moving between people, places, and tools every day. Whether it's custom order details that currently live in phone calls and memory, production coordination between Grand Haven and Spring Lake, or just getting the systems you already use to share information instead of duplicating it. I come in for a day, learn how things actually flow, and build whatever makes the biggest difference. Sometimes that's the whole project. Sometimes it's the start of something bigger.</p>
+    </div>
+  </section>
+
+  <!-- Section 3: About Nick -->
+  <section class="about">
+    <div class="content">
+      <img src="nick-headshot.png" alt="Nick Dahlhoff" class="headshot">
+      <h2>Who I am</h2>
+      <p class="bio">I'm Nick Dahlhoff, based in West Michigan. I help local businesses figure out where AI tools and better systems can actually save them time and money. Every business is different, so I start by understanding yours. Then I build exactly what you need.</p>
+      <p class="credential">AI systems builder for small businesses: custom software, automation, and process improvement.</p>
+    </div>
+  </section>
+
+  <!-- Section 4: How It Works -->
+  <section class="how-it-works">
+    <div class="content">
+      <h2>Here's how it works</h2>
+
+      <div class="step">
+        <span class="step-number">1</span>
+        <div class="step-content">
+          <strong>We talk first.</strong> Quick call to understand your situation. No sales pitch. If it doesn't seem like a fit, I'll tell you.
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-number">2</span>
+        <div class="step-content">
+          <strong>I come to you.</strong> I spend half a day at your business: walking around, watching how things work, asking questions, mapping out your systems and figuring out where the biggest opportunities are.
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-number">3</span>
+        <div class="step-content">
+          <strong>I start building.</strong> The other half of the day, I work on your highest-priority issue. Could be quick wins you see results from immediately, or the start of something bigger.
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-number">4</span>
+        <div class="step-content">
+          <strong>You decide what's next.</strong> Some people just want the one day. Others want ongoing help building bigger systems. Either way works.
+        </div>
+      </div>
+
+      <div class="pricing-block">
+        <p><strong>One day of hands-on work, $750.</strong> Covers research, implementation, and a follow-up check-in.</p>
+        <p>For businesses that want to go deeper, ongoing project work is available. We figure that out together after the first day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: CTA -->
+  <section class="cta-section" id="contact">
+    <div class="content">
+      <h2>Interested? Let's talk.</h2>
+
+      <div class="cta-grid">
+        <!-- Form Card -->
+        <div class="cta-card">
+          <h3>Send me a message</h3>
+          <p>I'll get back to you within a day.</p>
+          <form id="contactForm">
+            <input type="hidden" name="source" value="prospect_site">
+            <input type="hidden" name="slug" value="grand-finale-deli-bakeshop">
+            <input type="text" name="website" class="honeypot" aria-hidden="true" tabindex="-1" autocomplete="off">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="What's on your mind?"></textarea>
+            </div>
+            <button type="submit" class="btn-cta" style="width:100%;">Send Message</button>
+          </form>
+          <div id="formSuccess">
+            <p>Message sent. I'll be in touch soon.</p>
+          </div>
+        </div>
+
+        <!-- Cal Card -->
+        <div class="cta-card">
+          <h3>Book a call</h3>
+          <p>Or book a 30-minute call. No pitch, just a conversation.</p>
+          <button
+            class="btn-cta"
+            style="width:100%;"
+            data-cal-namespace=""
+            data-cal-link="nickdahlhoff/30min"
+            data-cal-config='{"layout":"month_view"}'
+          >Book a 30-Minute Call</button>
+        </div>
+
+        <!-- Payment Card -->
+        <div class="cta-card">
+          <h3>Ready to go?</h3>
+          <p>Book your one-day engagement now — $750.</p>
+          <a
+            href="https://buy.stripe.com/test_8x214o5MnftB2bUbt7dfG00"
+            target="_blank"
+            rel="noopener"
+            class="btn-cta"
+            style="width:100%; text-align:center;"
+          >Pay Now — $750</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Footer -->
+  <footer class="footer">
+    <p>Nick Dahlhoff | West Michigan</p>
+    <p><a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <!-- Cal.com embed script -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "", {origin:"https://cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}}});
+  </script>
+
+  <!-- Form submission -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('contactForm');
+      var success = document.getElementById('formSuccess');
+      var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+          }
+
+          var data = {
+            name: form.elements.name.value || undefined,
+            email: form.elements.email.value,
+            phone: form.elements.phone.value || undefined,
+            message: form.elements.message.value,
+            source: 'prospect_site',
+            slug: form.elements.slug.value,
+            website: form.elements.website.value || undefined,
+          };
+
+          fetch('https://calculating-platypus-531.convex.site/leads', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          })
+            .then(function(res) {
+              if (!res.ok) throw new Error('Submission failed');
+              form.style.display = 'none';
+              success.style.display = 'block';
+            })
+            .catch(function() {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+              }
+              alert('Something went wrong — please try again or email ndahlhoff10@gmail.com directly.');
+            });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
