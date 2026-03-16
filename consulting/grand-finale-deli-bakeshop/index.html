@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grand Finale Deli & Bakeshop | Nick Dahlhoff, AI Consulting</title>
-  <meta name="description" content="Custom systems and automation for Grand Finale Deli & Bakeshop in Grand Haven, MI. On-site consulting to connect your tools, simplify operations, and save time across both locations.">
+  <meta name="description" content="Custom systems and automation for Grand Finale Deli & Bakeshop in Grand Haven and Spring Lake, built on-site by Nick Dahlhoff.">
   <meta property="og:title" content="Grand Finale Deli & Bakeshop | Nick Dahlhoff, AI Consulting">
-  <meta property="og:description" content="Custom systems and automation for Grand Finale Deli & Bakeshop in Grand Haven, MI. On-site consulting to connect your tools, simplify operations, and save time across both locations.">
+  <meta property="og:description" content="Custom systems and automation for Grand Finale Deli & Bakeshop in Grand Haven and Spring Lake, built on-site by Nick Dahlhoff.">
   <meta property="og:image" content="hero.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +41,7 @@
     body {
       font-family: var(--font-body);
       color: var(--color-text);
-      background-color: var(--color-bg);
+      background: var(--color-bg);
       line-height: 1.7;
       font-size: 1.125rem;
       -webkit-font-smoothing: antialiased;
@@ -49,7 +49,7 @@
 
     /* Hero Section */
     .hero {
-      background-color: var(--color-bg);
+      background: var(--color-bg);
       min-height: 80vh;
       display: flex;
       align-items: center;
@@ -77,28 +77,16 @@
 
     .hero-text .subhead {
       font-family: var(--font-body);
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       color: var(--color-text-secondary);
       line-height: 1.6;
       margin-bottom: 2rem;
     }
 
-    .hero-image-card {
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 32px rgba(45, 45, 45, 0.08);
-    }
-
-    .hero-image-card img {
-      display: block;
-      width: 100%;
-      object-fit: cover;
-    }
-
     .btn-cta {
       display: inline-block;
-      background-color: var(--color-accent);
-      color: #FFFFFF;
+      background: var(--color-accent);
+      color: #fff;
       font-family: var(--font-body);
       font-size: 1rem;
       font-weight: 600;
@@ -107,11 +95,11 @@
       text-decoration: none;
       border: none;
       cursor: pointer;
-      transition: background-color 0.2s ease, transform 0.2s ease;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
 
     .btn-cta:hover {
-      background-color: var(--color-accent-hover);
+      background: var(--color-accent-hover);
       transform: translateY(-1px);
     }
 
@@ -120,28 +108,52 @@
       outline-offset: 2px;
     }
 
-    /* Body Section — Part 1 */
+    .hero-image-card {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(45,45,45,0.08);
+    }
+
+    .hero-image-card img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* Body Sections */
     .body-part1 {
-      background-color: var(--color-bg);
+      background: var(--color-bg);
       padding: clamp(60px, 8vw, 120px) 24px;
     }
 
-    .body-part1 .content {
+    .body-part2 {
+      background: var(--color-surface-alt);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-content {
       max-width: 720px;
       margin: 0 auto;
     }
 
-    .body-part1 .content p:first-child {
+    .body-content p {
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .body-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .body-content p:first-child {
       font-size: 1.25rem;
+    }
+
+    .body-part1 .body-content p:first-child {
       border-left: 3px solid rgba(212, 133, 58, 0.3);
       padding-left: 1.25rem;
     }
 
-    .body-part1 .content p {
-      margin-bottom: 1.5rem;
-    }
-
-    /* Divider */
     .section-divider {
       max-width: 720px;
       margin: 0 auto;
@@ -149,29 +161,14 @@
       border-top: 1px solid rgba(212, 133, 58, 0.2);
     }
 
-    /* Body Section — Part 2 */
-    .body-part2 {
-      background-color: var(--color-surface-alt);
-      padding: clamp(60px, 8vw, 120px) 24px;
-    }
-
-    .body-part2 .content {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .body-part2 .content p {
-      margin-bottom: 1.5rem;
-    }
-
     /* About Section */
     .about {
-      background-color: var(--color-bg);
+      background: var(--color-bg);
       padding: clamp(60px, 8vw, 120px) 24px;
       text-align: center;
     }
 
-    .about .content {
+    .about-inner {
       max-width: 720px;
       margin: 0 auto;
     }
@@ -184,7 +181,7 @@
       margin-bottom: 2rem;
     }
 
-    .about .headshot {
+    .about-photo {
       width: 120px;
       height: 120px;
       border-radius: 50%;
@@ -193,25 +190,25 @@
       margin-bottom: 1.5rem;
     }
 
-    .about .bio {
+    .about-bio {
       font-size: 1.125rem;
       line-height: 1.7;
       margin-bottom: 1rem;
     }
 
-    .about .credential {
+    .about-credential {
       font-size: 0.875rem;
       color: var(--color-text-secondary);
-      font-weight: 600;
+      font-style: italic;
     }
 
-    /* How It Works */
+    /* How It Works Section */
     .how-it-works {
-      background-color: var(--color-surface);
+      background: var(--color-surface);
       padding: clamp(60px, 8vw, 120px) 24px;
     }
 
-    .how-it-works .content {
+    .how-inner {
       max-width: 720px;
       margin: 0 auto;
     }
@@ -222,6 +219,7 @@
       font-weight: 700;
       line-height: 1.2;
       margin-bottom: 2.5rem;
+      text-align: center;
     }
 
     .step {
@@ -237,7 +235,7 @@
       color: var(--color-accent);
       flex-shrink: 0;
       width: 2rem;
-      text-align: center;
+      text-align: right;
     }
 
     .step-content {
@@ -249,10 +247,10 @@
     }
 
     .pricing-block {
-      margin-top: 3rem;
+      margin-top: 2.5rem;
       padding: 1.5rem 2rem;
-      background-color: var(--color-accent-light);
-      border-radius: 12px;
+      background: var(--color-accent-light);
+      border-radius: 8px;
     }
 
     .pricing-block p {
@@ -261,18 +259,17 @@
 
     .pricing-block p:last-child {
       margin-bottom: 0;
-      color: var(--color-text-secondary);
       font-size: 0.95rem;
+      color: var(--color-text-secondary);
     }
 
     /* CTA Section */
     .cta-section {
-      background-color: var(--color-bg);
+      background: var(--color-bg);
       padding: clamp(60px, 8vw, 120px) 24px;
-      border-top: 1px solid var(--color-border);
     }
 
-    .cta-section .content {
+    .cta-inner {
       max-width: 1080px;
       margin: 0 auto;
     }
@@ -282,8 +279,8 @@
       font-size: clamp(1.75rem, 3.5vw, 2.75rem);
       font-weight: 700;
       line-height: 1.2;
-      margin-bottom: 2.5rem;
       text-align: center;
+      margin-bottom: 3rem;
     }
 
     .cta-grid {
@@ -293,7 +290,7 @@
     }
 
     .cta-card {
-      background-color: var(--color-surface);
+      background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: 12px;
       padding: 2rem;
@@ -309,7 +306,7 @@
     .cta-card p {
       font-size: 0.95rem;
       color: var(--color-text-secondary);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .form-group {
@@ -320,7 +317,7 @@
       display: block;
       font-size: 0.875rem;
       font-weight: 600;
-      margin-bottom: 0.375rem;
+      margin-bottom: 0.35rem;
       color: var(--color-text);
     }
 
@@ -328,12 +325,12 @@
     .form-group textarea {
       width: 100%;
       padding: 12px 14px;
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
       font-family: var(--font-body);
       font-size: 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      background: var(--color-bg);
       color: var(--color-text);
-      background-color: var(--color-surface);
       transition: border-color 0.2s ease;
     }
 
@@ -349,45 +346,36 @@
       min-height: 100px;
     }
 
-    .honeypot {
-      position: absolute;
-      left: -9999px;
-    }
-
-    #formSuccess {
+    .form-success {
       display: none;
       text-align: center;
       padding: 2rem;
     }
 
-    #formSuccess p {
+    .form-success p {
+      font-size: 1.125rem;
       color: var(--color-success);
       font-weight: 600;
-      font-size: 1.125rem;
     }
 
     /* Footer */
-    .footer {
-      background-color: var(--color-bg);
+    footer {
+      background: var(--color-bg);
       border-top: 1px solid var(--color-border);
-      padding: 2.5rem 24px;
+      padding: 2rem 24px;
       text-align: center;
-    }
-
-    .footer p {
       font-size: 0.875rem;
       color: var(--color-text-secondary);
-      margin-bottom: 0.25rem;
     }
 
-    .footer a {
-      color: var(--color-accent);
-      text-decoration: none;
+    footer a {
+      color: var(--color-text-secondary);
+      text-decoration: underline;
       transition: color 0.2s ease;
     }
 
-    .footer a:hover {
-      color: var(--color-accent-hover);
+    footer a:hover {
+      color: var(--color-accent);
     }
 
     /* Responsive */
@@ -417,14 +405,14 @@
       }
     }
 
-    @media (min-width: 769px) and (max-width: 1024px) {
+    @media (max-width: 1024px) and (min-width: 769px) {
       .cta-grid {
         grid-template-columns: 1fr 1fr;
       }
 
       .cta-card:last-child {
         grid-column: 1 / -1;
-        max-width: 480px;
+        max-width: 400px;
         justify-self: center;
       }
     }
@@ -432,79 +420,71 @@
 </head>
 <body>
 
-  <!-- Section 1: Hero -->
+  <!-- Hero Section -->
   <section class="hero" id="top">
     <div class="hero-inner">
       <div class="hero-text">
-        <h1>Two locations, a Bourdain sandwich, and customers who drive across town for your carrot cake.</h1>
-        <p class="subhead">You built something people genuinely love. The operational side can work just as well.</p>
+        <h1>Two locations, 71 reviews, and the kind of reputation where clients describe your buttercream with genuine emotion.</h1>
+        <p class="subhead">You've built something real in Grand Haven and Spring Lake. The operational side can match.</p>
         <a href="#contact" class="btn-cta">Let's Talk About Grand Finale</a>
       </div>
       <div class="hero-image-card">
-        <!-- Hero image generated from prompt: warm pencil-and-ink illustration of bustling bakery display case -->
-        <img src="hero.png" alt="Warm illustration of a bustling bakery with decorated cakes, pastries, and golden loaves">
+        <!-- Hero image generated from prompt: warm pencil-and-ink illustration showing split scene of two connected bakery locations -->
+        <img src="hero.png" alt="Illustration of Grand Finale's two bakery locations in warm pencil-and-ink style">
       </div>
     </div>
   </section>
 
-  <!-- Section 2: Body — Part 1 (Their Business) -->
+  <!-- Body Part 1: Their Business -->
   <section class="body-part1">
-    <div class="content">
-      <p>Grand Finale has earned something most bakeries don't: customers who come back for events year after year. Wedding cakes, baby showers, birthdays. People describe working with you as a real experience, not just an order form. They get tasting boxes. They get suggestions that actually account for their dietary needs. They get follow-through. That kind of service built a 4.7-star reputation across 71 reviews and a 92% owner response rate that most businesses twice your size couldn't sustain.</p>
-      <p>The range is striking. The Grand Haven shop handles pastries, sandwiches, coffee, and custom orders. The Spring Lake bistro runs a full dining room with a wine list. Wholesale accounts. Catering. The muffuletta gets its own shoutouts. You're running what amounts to several businesses under one name, each with its own operational rhythm.</p>
+    <div class="body-content">
+      <p>Grand Finale is operating as two distinct businesses under one name. The Grand Haven deli and bakeshop runs counter service with coffee, pastries, sandwiches, and a custom cake operation that clearly drives significant revenue. The Spring Lake bistro is a full-service restaurant with a bar and a patisserie program. That range, from a breakfast pastry run to a full dinner with wine, is unusual for an independent operation this size.</p>
+      <p>What comes through in the reviews is how personal the custom order experience is. Customers describe tasting boxes, consultations about their events, and specific flavor work (lemon raspberry, carrot cake, chocolate ganache) that sounds more like a patisserie than a neighborhood bakery. Multiple people mention being accommodated on dietary restrictions without being treated like an inconvenience. And you respond to nearly every review individually, with real specifics, not templates. That level of attention is doing serious brand-building work whether you think of it that way or not.</p>
     </div>
   </section>
 
   <hr class="section-divider">
 
-  <!-- Section 2: Body — Part 2 (The Offer) -->
+  <!-- Body Part 2: The Offer -->
   <section class="body-part2">
-    <div class="content">
-      <p>For a business running two locations with custom orders, retail, wholesale, and a full-service bistro, there's a lot of information moving between people, places, and tools every day. Whether it's custom order details that currently live in phone calls and memory, production coordination between Grand Haven and Spring Lake, or just getting the systems you already use to share information instead of duplicating it. I come in for a day, learn how things actually flow, and build whatever makes the biggest difference. Sometimes that's the whole project. Sometimes it's the start of something bigger.</p>
+    <div class="body-content">
+      <p>A business running two locations with custom orders, wholesale, counter service, and full-service dining has a lot of moving parts. Whether it's order intake that starts with a phone call and ends on a sticky note, production planning that lives in someone's head, or scheduling across two kitchens that happens over text, you've probably thought about what it would look like if some of that just ran on its own. I show up, spend time understanding how both locations actually operate, and build whatever saves the most time or money. Could be connecting your ordering workflow so nothing falls through. Could be a dashboard that makes cross-location coordination less manual. Could be something I haven't thought of yet that becomes obvious after walking around for a couple hours. One day, on-site, building real things. Sometimes that's the whole project. Sometimes it's the start of something bigger.</p>
     </div>
   </section>
 
-  <!-- Section 3: About Nick -->
+  <!-- About Nick -->
   <section class="about">
-    <div class="content">
-      <img src="nick-headshot.png" alt="Nick Dahlhoff" class="headshot">
+    <div class="about-inner">
       <h2>Who I am</h2>
-      <p class="bio">I'm Nick Dahlhoff, based in West Michigan. I help local businesses figure out where AI tools and better systems can actually save them time and money. Every business is different, so I start by understanding yours. Then I build exactly what you need.</p>
-      <p class="credential">AI systems builder for small businesses: custom software, automation, and process improvement.</p>
+      <img src="nick-headshot.png" alt="Nick Dahlhoff" class="about-photo">
+      <p class="about-bio">I'm Nick Dahlhoff, based in West Michigan. I help local businesses figure out where AI tools and better systems can actually save them time and money. Every business is different, so I start by understanding yours. Then I build exactly what you need.</p>
+      <p class="about-credential">AI systems builder for small businesses: custom software, automation, and process improvement.</p>
     </div>
   </section>
 
-  <!-- Section 4: How It Works -->
+  <!-- How It Works -->
   <section class="how-it-works">
-    <div class="content">
+    <div class="how-inner">
       <h2>Here's how it works</h2>
 
       <div class="step">
-        <span class="step-number">1</span>
-        <div class="step-content">
-          <strong>We talk first.</strong> Quick call to understand your situation. No sales pitch. If it doesn't seem like a fit, I'll tell you.
-        </div>
+        <span class="step-number">1.</span>
+        <div class="step-content"><strong>We talk first.</strong> Quick call to understand your situation. No sales pitch. If it doesn't seem like a fit, I'll tell you.</div>
       </div>
 
       <div class="step">
-        <span class="step-number">2</span>
-        <div class="step-content">
-          <strong>I come to you.</strong> I spend half a day at your business: walking around, watching how things work, asking questions, mapping out your systems and figuring out where the biggest opportunities are.
-        </div>
+        <span class="step-number">2.</span>
+        <div class="step-content"><strong>I come to you.</strong> I spend half a day at your business: walking around, watching how things work, asking questions, mapping out your systems and figuring out where the biggest opportunities are.</div>
       </div>
 
       <div class="step">
-        <span class="step-number">3</span>
-        <div class="step-content">
-          <strong>I start building.</strong> The other half of the day, I work on your highest-priority issue. Could be quick wins you see results from immediately, or the start of something bigger.
-        </div>
+        <span class="step-number">3.</span>
+        <div class="step-content"><strong>I start building.</strong> The other half of the day, I work on your highest-priority issue. Could be quick wins you see results from immediately, or the start of something bigger.</div>
       </div>
 
       <div class="step">
-        <span class="step-number">4</span>
-        <div class="step-content">
-          <strong>You decide what's next.</strong> Some people just want the one day. Others want ongoing help building bigger systems. Either way works.
-        </div>
+        <span class="step-number">4.</span>
+        <div class="step-content"><strong>You decide what's next.</strong> Some people just want the one day. Others want ongoing help building bigger systems. Either way works.</div>
       </div>
 
       <div class="pricing-block">
@@ -514,87 +494,79 @@
     </div>
   </section>
 
-  <!-- Section 5: CTA -->
+  <!-- CTA Section -->
   <section class="cta-section" id="contact">
-    <div class="content">
+    <div class="cta-inner">
       <h2>Interested? Let's talk.</h2>
 
       <div class="cta-grid">
-        <!-- Form Card -->
+        <!-- Contact Form -->
         <div class="cta-card">
-          <h3>Send me a message</h3>
-          <p>I'll get back to you within a day.</p>
+          <h3>Send a message</h3>
           <form id="contactForm">
-            <input type="hidden" name="source" value="prospect_site">
-            <input type="hidden" name="slug" value="grand-finale-deli-bakeshop">
-            <input type="text" name="website" class="honeypot" aria-hidden="true" tabindex="-1" autocomplete="off">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" placeholder="Your name">
             </div>
             <div class="form-group">
-              <label for="email">Email *</label>
+              <label for="email">Email</label>
               <input type="email" id="email" name="email" required placeholder="you@example.com">
             </div>
             <div class="form-group">
-              <label for="phone">Phone</label>
+              <label for="phone">Phone (optional)</label>
               <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
             </div>
             <div class="form-group">
-              <label for="message">Message *</label>
+              <label for="message">Message</label>
               <textarea id="message" name="message" required placeholder="What's on your mind?"></textarea>
             </div>
-            <button type="submit" class="btn-cta" style="width:100%;">Send Message</button>
+            <input type="hidden" name="source" value="prospect_site">
+            <input type="hidden" name="slug" value="grand-finale-deli-bakeshop">
+            <!-- Honeypot -->
+            <input type="text" name="website" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off">
+            <button type="submit" class="btn-cta" style="width:100%;text-align:center;">Send Message</button>
           </form>
-          <div id="formSuccess">
+          <div id="formSuccess" class="form-success">
             <p>Message sent. I'll be in touch soon.</p>
           </div>
         </div>
 
-        <!-- Cal Card -->
-        <div class="cta-card">
+        <!-- Cal.com Booking -->
+        <div class="cta-card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
           <h3>Book a call</h3>
-          <p>Or book a 30-minute call. No pitch, just a conversation.</p>
+          <p>No pitch, just a conversation. 30 minutes to see if it makes sense.</p>
           <button
             class="btn-cta"
-            style="width:100%;"
             data-cal-namespace=""
             data-cal-link="nickdahlhoff/30min"
             data-cal-config='{"layout":"month_view"}'
           >Book a 30-Minute Call</button>
         </div>
 
-        <!-- Payment Card -->
-        <div class="cta-card">
+        <!-- Payment -->
+        <div class="cta-card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
           <h3>Ready to go?</h3>
-          <p>Book your one-day engagement now — $750.</p>
-          <a
-            href="https://buy.stripe.com/test_8x214o5MnftB2bUbt7dfG00"
-            target="_blank"
-            rel="noopener"
-            class="btn-cta"
-            style="width:100%; text-align:center;"
-          >Pay Now — $750</a>
+          <p>Book your one-day engagement now — $750</p>
+          <a href="https://buy.stripe.com/test_8x214o5MnftB2bUbt7dfG00" target="_blank" rel="noopener" class="btn-cta">Pay Now — $750</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 6: Footer -->
-  <footer class="footer">
-    <p>Nick Dahlhoff | West Michigan</p>
-    <p><a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
+  <!-- Footer -->
+  <footer>
+    <p>Nick Dahlhoff | West Michigan | <a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
     <p>&copy; 2026</p>
   </footer>
 
-  <!-- Cal.com embed script -->
+  <!-- Cal.com Embed -->
   <script type="text/javascript">
-    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", "", {origin:"https://cal.com"});
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://app.cal.com"});
     Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}}});
   </script>
 
-  <!-- Form submission -->
+  <!-- Contact Form Handler -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var form = document.getElementById('contactForm');

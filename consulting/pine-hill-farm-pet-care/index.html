@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pine Hill Farm Pet Care | Nick Dahlhoff, AI Consulting</title>
-  <meta name="description" content="Custom systems and AI tools built on-site for Pine Hill Farm Pet Care in West Olive, MI. Booking, client communication, and daily operations made simpler.">
+  <meta name="description" content="Custom systems and automation built on-site for Pine Hill Farm Pet Care in West Olive, MI. Scheduling, client records, and daily operations made simpler.">
   <meta property="og:title" content="Pine Hill Farm Pet Care | Nick Dahlhoff, AI Consulting">
-  <meta property="og:description" content="Custom systems and AI tools built on-site for Pine Hill Farm Pet Care in West Olive, MI. Booking, client communication, and daily operations made simpler.">
+  <meta property="og:description" content="Custom systems and automation built on-site for Pine Hill Farm Pet Care in West Olive, MI. Scheduling, client records, and daily operations made simpler.">
   <meta property="og:image" content="hero.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,6 +47,23 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      color: var(--color-text);
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      line-height: 1.2;
+      color: var(--color-text);
+    }
+
     /* Hero Section */
     .hero {
       background-color: var(--color-bg);
@@ -66,45 +83,40 @@
       align-items: center;
     }
 
-    .hero-text h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 700;
-      line-height: 1.1;
-      color: var(--color-text);
-      margin-bottom: 1.5rem;
+    .hero-text {
+      padding-right: 2rem;
     }
 
-    .hero-text .subhead {
+    .hero-subhead {
       font-family: var(--font-body);
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: var(--color-text-secondary);
-      line-height: 1.65;
-      margin-bottom: 2rem;
+      margin-top: 1.5rem;
+      line-height: 1.6;
     }
 
-    .btn-cta {
+    .hero-cta {
       display: inline-block;
+      margin-top: 2.5rem;
+      padding: 16px 32px;
       background-color: var(--color-accent);
       color: #FFFFFF;
       font-family: var(--font-body);
       font-size: 1rem;
       font-weight: 600;
-      padding: 16px 32px;
-      border-radius: 8px;
       text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.2s ease;
       border: none;
       cursor: pointer;
-      transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
-    .btn-cta:hover {
+    .hero-cta:hover {
       background-color: var(--color-accent-hover);
-      transform: translateY(-1px);
     }
 
-    .btn-cta:focus {
-      outline: 2px solid var(--color-accent);
+    .hero-cta:focus {
+      outline: 3px solid var(--color-accent);
       outline-offset: 2px;
     }
 
@@ -115,12 +127,12 @@
     }
 
     .hero-image-card img {
-      width: 100%;
       display: block;
+      width: 100%;
       object-fit: cover;
     }
 
-    /* Body Sections */
+    /* Body sections */
     .body-part1 {
       background-color: var(--color-bg);
       padding: clamp(60px, 8vw, 120px) 24px;
@@ -136,18 +148,21 @@
       margin: 0 auto;
     }
 
-    .body-part1 .body-content p:first-child {
-      font-size: 1.25rem;
-      border-left: 3px solid rgba(212, 133, 58, 0.3);
-      padding-left: 1.25rem;
-    }
-
     .body-content p {
       margin-bottom: 1.5rem;
     }
 
     .body-content p:last-child {
       margin-bottom: 0;
+    }
+
+    .body-content p:first-child {
+      font-size: 1.25rem;
+    }
+
+    .body-content p:first-child {
+      border-left: 3px solid rgba(212, 133, 58, 0.3);
+      padding-left: 1.25rem;
     }
 
     .section-divider {
@@ -157,7 +172,7 @@
       border-top: 1px solid rgba(212, 133, 58, 0.2);
     }
 
-    /* About Nick */
+    /* About section */
     .about {
       background-color: var(--color-bg);
       padding: clamp(60px, 8vw, 120px) 24px;
@@ -170,10 +185,6 @@
     }
 
     .about h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      font-weight: 700;
-      line-height: 1.2;
       margin-bottom: 2rem;
     }
 
@@ -186,16 +197,16 @@
       margin-bottom: 1.5rem;
     }
 
-    .about .bio {
+    .about-bio {
       font-size: 1.125rem;
       line-height: 1.7;
       margin-bottom: 1rem;
     }
 
-    .about .credential {
+    .about-credential {
       font-size: 0.875rem;
       color: var(--color-text-secondary);
-      font-weight: 600;
+      font-style: italic;
     }
 
     /* How It Works */
@@ -210,61 +221,69 @@
     }
 
     .how-it-works h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
     }
 
     .step {
-      margin-bottom: 2rem;
-      padding-left: 3.5rem;
-      position: relative;
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
     }
 
     .step-number {
-      position: absolute;
-      left: 0;
-      top: 0;
       font-family: var(--font-display);
-      font-size: 1.75rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--color-accent);
-      line-height: 1;
+      flex-shrink: 0;
+      line-height: 1.2;
+      width: 2rem;
+      text-align: center;
+    }
+
+    .step-content {
+      flex: 1;
     }
 
     .step-title {
+      font-family: var(--font-body);
       font-weight: 600;
-      margin-bottom: 0.25rem;
+      font-size: 1.125rem;
+      margin-bottom: 0.35rem;
     }
 
     .step-desc {
       color: var(--color-text-secondary);
+      font-size: 1rem;
+      line-height: 1.65;
     }
 
     .pricing-block {
-      margin-top: 2.5rem;
       background-color: var(--color-accent-light);
-      border-radius: 12px;
+      border-radius: 8px;
       padding: 1.5rem 2rem;
+      margin-top: 2.5rem;
+      text-align: center;
     }
 
-    .pricing-block .price {
+    .pricing-block p {
       font-size: 1.125rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
     }
 
-    .pricing-block .ongoing {
-      font-size: 0.95rem;
+    .pricing-ongoing {
+      text-align: center;
+      margin-top: 1rem;
       color: var(--color-text-secondary);
+      font-size: 0.875rem;
     }
 
-    /* CTA Section */
+    /* CTA section */
     .cta-section {
       background-color: var(--color-bg);
       padding: clamp(60px, 8vw, 120px) 24px;
+      border-top: 1px solid var(--color-border);
     }
 
     .cta-inner {
@@ -273,18 +292,15 @@
     }
 
     .cta-section h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 2.5rem;
       text-align: center;
+      margin-bottom: 3rem;
     }
 
     .cta-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 2rem;
+      align-items: start;
     }
 
     .cta-card {
@@ -295,16 +311,10 @@
     }
 
     .cta-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-
-    .cta-card p {
-      font-size: 0.95rem;
-      color: var(--color-text-secondary);
-      margin-bottom: 1.5rem;
+      font-family: var(--font-body);
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
     }
 
     .form-group {
@@ -316,7 +326,7 @@
       font-size: 0.875rem;
       font-weight: 600;
       margin-bottom: 0.35rem;
-      color: var(--color-text);
+      color: var(--color-text-secondary);
     }
 
     .form-group input,
@@ -343,63 +353,140 @@
       min-height: 100px;
     }
 
+    .form-submit {
+      display: inline-block;
+      width: 100%;
+      padding: 14px 24px;
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .form-submit:hover {
+      background-color: var(--color-accent-hover);
+    }
+
+    .form-submit:focus {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
     #formSuccess {
       display: none;
       text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    #formSuccess h3 {
-      font-family: var(--font-display);
-      color: var(--color-success);
-      margin-bottom: 0.5rem;
+      padding: 2rem;
     }
 
     #formSuccess p {
-      color: var(--color-text-secondary);
+      font-size: 1.125rem;
+      color: var(--color-success);
+      font-weight: 600;
     }
 
-    .honeypot {
-      position: absolute;
-      left: -9999px;
+    .cal-text {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .cal-button {
+      display: inline-block;
+      width: 100%;
+      padding: 14px 24px;
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      text-align: center;
+    }
+
+    .cal-button:hover {
+      background-color: var(--color-accent-hover);
+    }
+
+    .cal-button:focus {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    .pay-text {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .pay-button {
+      display: inline-block;
+      width: 100%;
+      padding: 14px 24px;
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .pay-button:hover {
+      background-color: var(--color-accent-hover);
+    }
+
+    .pay-button:focus {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 2px;
     }
 
     /* Footer */
     .footer {
       background-color: var(--color-bg);
+      border-top: 1px solid var(--color-border);
       padding: 2.5rem 24px;
       text-align: center;
-      border-top: 1px solid var(--color-border);
-    }
-
-    .footer p {
-      font-size: 0.875rem;
       color: var(--color-text-secondary);
+      font-size: 0.875rem;
     }
 
     .footer a {
-      color: var(--color-accent);
-      text-decoration: none;
+      color: var(--color-text-secondary);
+      text-decoration: underline;
+      transition: color 0.2s ease;
     }
 
     .footer a:hover {
-      text-decoration: underline;
+      color: var(--color-accent);
     }
 
     /* Responsive */
-    @media (max-width: 1024px) {
-      .cta-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
     @media (max-width: 768px) {
+      .hero {
+        min-height: auto;
+      }
+
       .hero-inner {
         grid-template-columns: 1fr;
-        text-align: center;
       }
 
       .hero-text {
+        padding-right: 0;
+        text-align: center;
         order: 1;
       }
 
@@ -408,8 +495,13 @@
         max-height: 50vh;
       }
 
-      .hero {
-        min-height: auto;
+      .hero-cta {
+        margin-top: 2rem;
+      }
+
+      .body-content p:first-child {
+        border-left: none;
+        padding-left: 0;
       }
 
       .cta-grid {
@@ -417,11 +509,13 @@
       }
 
       .step {
-        padding-left: 3rem;
+        gap: 1rem;
       }
+    }
 
-      .body-part1 .body-content p:first-child {
-        font-size: 1.125rem;
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .cta-grid {
+        grid-template-columns: 1fr 1fr;
       }
     }
   </style>
@@ -432,13 +526,13 @@
   <section class="hero" id="top">
     <div class="hero-inner">
       <div class="hero-text">
-        <h1>54 reviews, clients who call your groomer the best in West Michigan, and a farm setting no chain kennel can replicate.</h1>
-        <p class="subhead">What you've built on trust and personal attention is exactly the kind of business where the right systems make the biggest difference.</p>
-        <a href="#contact" class="btn-cta">Let's Talk About Pine Hill Farm Pet Care</a>
+        <h1>Eight years on Lake Michigan Drive, and the people who bring their pets to you keep bringing them back.</h1>
+        <p class="hero-subhead">There's a reason repeat customers don't even consider other options, and it has nothing to do with your website.</p>
+        <a href="#contact" class="hero-cta">Let's Talk About Pine Hill Farm Pet Care</a>
       </div>
       <div class="hero-image-card">
-        <!-- Hero image generated from prompt: farm property pet care facility, morning light, dogs playing, calm and capable feel -->
-        <img src="hero.png" alt="Warm illustration of a farm-style pet care facility with dogs playing in a grassy yard">
+        <!-- Hero image: warm morning scene of farm property with dogs in fenced yard, woman among them, barn-converted building, wooden fence with Pine Hill Farm Pet Care sign -->
+        <img src="hero.png" alt="Warm illustration of Pine Hill Farm Pet Care property with dogs playing in a fenced yard">
       </div>
     </div>
   </section>
@@ -446,17 +540,18 @@
   <!-- Section 2: Body Part 1 — Their Business -->
   <section class="body-part1">
     <div class="body-content">
-      <p>Pine Hill Farm Pet Care has something most pet care businesses spend years trying to manufacture: real trust. Clients don't just leave positive reviews. They mention your team by name, describe watching their dogs get groomed and feeling genuinely good about it, and come back year after year with multiple pets. One reviewer called it "the best groomer in West Michigan." Another said they've "boarded all my dogs here for years and couldn't recommend Pine Hill more." That's not marketing. That's earned.</p>
-      <p>The farm setting on Lake Michigan Drive is a genuine differentiator. You're not a concrete-and-fluorescent boarding facility. You're a place where pet parents feel like their dogs are staying somewhere comfortable and real. You serve the lakeshore corridor between Grand Haven and Holland, and the people who find you tend to stay.</p>
+      <p>A few things stand out about Pine Hill Farm Pet Care. The setting itself is a differentiator. A real farm on Lake Michigan Drive in West Olive, not a strip mall kennel with fluorescent lights and concrete runs. That environment is part of what people are paying for, whether they realize it or not. The reviews tell a consistent story: owners who board their dogs here for years, who drive past closer options to get to you, who describe leaving their pets with genuine peace of mind.</p>
+      <p>The grooming side of the business gets specific, enthusiastic praise. Clients describe someone who's gentle with elderly dogs, patient with anxious ones, and consistently delivers results that keep people coming back. The range of services, boarding, grooming, daycare, means clients consolidate their pet care in one place. That kind of relationship stacks over time.</p>
     </div>
   </section>
 
+  <!-- Visual divider -->
   <hr class="section-divider">
 
   <!-- Section 2: Body Part 2 — The Offer -->
   <section class="body-part2">
     <div class="body-content">
-      <p>Whether it's managing boarding reservations that still run through phone calls during limited hours, keeping track of which pets need what during their stay, or giving anxious pet parents the updates they want without pulling your team off the floor, there's a lot in a daily operation like yours that doesn't need to be this hard anymore. I show up for a day, learn how Pine Hill actually runs from open to close, and build whatever makes the biggest difference. Sometimes that's a single tool that handles the most tedious part of the week. Sometimes it opens up something bigger. Either way, it starts with a conversation.</p>
+      <p>Whether it's appointment scheduling that lives in a notebook and your memory, client records scattered across different places, or the back-and-forth of phone calls and texts for every booking and update, a business your size usually has a handful of things that take more time than they should. I build custom tools and automations that handle the operational side so you can focus on the animals. I show up for a day, learn how your business actually runs, and start building whatever saves the most time. Could be a full project in a day. Could be the start of something bigger. Either way, it starts with a conversation.</p>
     </div>
   </section>
 
@@ -465,8 +560,8 @@
     <div class="about-inner">
       <h2>Who I am</h2>
       <img src="nick-headshot.png" alt="Nick Dahlhoff" class="about-photo">
-      <p class="bio">I'm Nick Dahlhoff, based in West Michigan. I help local businesses figure out where AI tools and better systems can actually save them time and money. Every business is different, so I start by understanding yours. Then I build exactly what you need.</p>
-      <p class="credential">AI systems builder for small businesses: custom software, automation, and process improvement.</p>
+      <p class="about-bio">I'm Nick Dahlhoff, based in West Michigan. I help local businesses figure out where AI tools and better systems can actually save them time and money. Every business is different, so I start by understanding yours. Then I build exactly what you need.</p>
+      <p class="about-credential">AI systems builder for small businesses: custom software, automation, and process improvement.</p>
     </div>
   </section>
 
@@ -476,33 +571,41 @@
       <h2>Here's how it works</h2>
 
       <div class="step">
-        <span class="step-number">1</span>
-        <p class="step-title">We talk first.</p>
-        <p class="step-desc">Quick call to understand your situation. No sales pitch. If it doesn't seem like a fit, I'll tell you.</p>
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-title">We talk first.</div>
+          <div class="step-desc">Quick call to understand your situation. No sales pitch. If it doesn't seem like a fit, I'll tell you.</div>
+        </div>
       </div>
 
       <div class="step">
-        <span class="step-number">2</span>
-        <p class="step-title">I come to you.</p>
-        <p class="step-desc">I spend half a day at your business: walking around, watching how things work, asking questions, mapping out your systems and figuring out where the biggest opportunities are.</p>
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <div class="step-title">I come to you.</div>
+          <div class="step-desc">I spend half a day at your business: walking around, watching how things work, asking questions, mapping out your systems and figuring out where the biggest opportunities are.</div>
+        </div>
       </div>
 
       <div class="step">
-        <span class="step-number">3</span>
-        <p class="step-title">I start building.</p>
-        <p class="step-desc">The other half of the day, I work on your highest-priority issue. Could be quick wins you see results from immediately, or the start of something bigger.</p>
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <div class="step-title">I start building.</div>
+          <div class="step-desc">The other half of the day, I work on your highest-priority issue. Could be quick wins you see results from immediately, or the start of something bigger.</div>
+        </div>
       </div>
 
       <div class="step">
-        <span class="step-number">4</span>
-        <p class="step-title">You decide what's next.</p>
-        <p class="step-desc">Some people just want the one day. Others want ongoing help building bigger systems. Either way works.</p>
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <div class="step-title">You decide what's next.</div>
+          <div class="step-desc">Some people just want the one day. Others want ongoing help building bigger systems. Either way works.</div>
+        </div>
       </div>
 
       <div class="pricing-block">
-        <p class="price">One day of hands-on work, $750. Covers research, implementation, and a follow-up check-in.</p>
-        <p class="ongoing">For businesses that want to go deeper, ongoing project work is available. We figure that out together after the first day.</p>
+        <p>One day of hands-on work, $750. Covers research, implementation, and a follow-up check-in.</p>
       </div>
+      <p class="pricing-ongoing">For businesses that want to go deeper, ongoing project work is available. We figure that out together after the first day.</p>
     </div>
   </section>
 
@@ -512,13 +615,14 @@
       <h2>Interested? Let's talk.</h2>
 
       <div class="cta-grid">
-        <!-- Contact Form -->
+        <!-- Form -->
         <div class="cta-card">
           <h3>Send me a message</h3>
           <form id="contactForm">
             <input type="hidden" name="source" value="prospect_site">
             <input type="hidden" name="slug" value="pine-hill-farm-pet-care">
-            <input type="text" name="website" class="honeypot" aria-hidden="true" tabindex="-1" autocomplete="off">
+            <!-- Honeypot -->
+            <input type="text" name="website" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off">
 
             <div class="form-group">
               <label for="name">Name</label>
@@ -526,36 +630,40 @@
             </div>
             <div class="form-group">
               <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required placeholder="you@email.com">
+              <input type="email" id="email" name="email" required placeholder="your@email.com">
             </div>
             <div class="form-group">
               <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+              <input type="tel" id="phone" name="phone" placeholder="(optional)">
             </div>
             <div class="form-group">
               <label for="message">Message *</label>
               <textarea id="message" name="message" required placeholder="What's on your mind?"></textarea>
             </div>
-            <button type="submit" class="btn-cta" style="width: 100%;">Send Message</button>
+            <button type="submit" class="form-submit">Send Message</button>
           </form>
           <div id="formSuccess">
-            <h3>Message sent.</h3>
-            <p>I'll get back to you within 24 hours.</p>
+            <p>Message sent. I'll be in touch soon.</p>
           </div>
         </div>
 
-        <!-- Cal.com Booking -->
-        <div class="cta-card" style="display: flex; flex-direction: column; justify-content: center; text-align: center;">
+        <!-- Cal.com booking -->
+        <div class="cta-card">
           <h3>Book a call</h3>
-          <p>No pitch, just a conversation. 30 minutes to see if there's a fit.</p>
-          <button class="btn-cta" data-cal-namespace="" data-cal-link="nickdahlhoff/30min" data-cal-config='{"layout":"month_view"}'>Book a 30-Minute Call</button>
+          <p class="cal-text">Or book a 30-minute call. No pitch, just a conversation.</p>
+          <button class="cal-button"
+            data-cal-namespace=""
+            data-cal-link="nickdahlhoff/30min"
+            data-cal-config='{"layout":"month_view"}'>
+            Book a 30-Minute Call
+          </button>
         </div>
 
         <!-- Payment -->
-        <div class="cta-card" style="display: flex; flex-direction: column; justify-content: center; text-align: center;">
-          <h3>Ready to go?</h3>
-          <p>Book your one-day engagement now. $750.</p>
-          <a href="https://buy.stripe.com/test_8x214o5MnftB2bUbt7dfG00" target="_blank" rel="noopener" class="btn-cta">Pay Now — $750</a>
+        <div class="cta-card">
+          <h3>Ready to Go?</h3>
+          <p class="pay-text">Book your one-day engagement now — $750</p>
+          <a href="https://buy.stripe.com/test_8x214o5MnftB2bUbt7dfG00" target="_blank" rel="noopener" class="pay-button">Pay Now — $750</a>
         </div>
       </div>
     </div>
@@ -568,14 +676,14 @@
     <p>&copy; 2026</p>
   </footer>
 
-  <!-- Cal.com Embed Script -->
+  <!-- Cal.com embed script -->
   <script type="text/javascript">
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", "", {origin:"https://cal.com"});
+    Cal("init", {origin:"https://cal.com"});
     Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}}});
   </script>
 
-  <!-- Contact Form Handler -->
+  <!-- Form submission -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var form = document.getElementById('contactForm');
