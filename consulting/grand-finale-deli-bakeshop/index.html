@@ -161,59 +161,18 @@
       border-top: 1px solid rgba(212, 133, 58, 0.2);
     }
 
-    /* About Section */
-    .about {
-      background: var(--color-bg);
-      padding: clamp(60px, 8vw, 120px) 24px;
-      text-align: center;
-    }
-
-    .about-inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .about h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 2rem;
-    }
-
-    .about-photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--color-border);
-      margin-bottom: 1.5rem;
-    }
-
-    .about-bio {
-      font-size: 1.125rem;
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    .about-credential {
-      font-size: 0.875rem;
-      color: var(--color-text-secondary);
-      font-style: italic;
-    }
-
-    /* How It Works Section */
-    .how-it-works {
+    /* Why Me Section */
+    .why-me {
       background: var(--color-surface);
       padding: clamp(60px, 8vw, 120px) 24px;
     }
 
-    .how-inner {
-      max-width: 720px;
+    .why-me-inner {
+      max-width: 900px;
       margin: 0 auto;
     }
 
-    .how-it-works h2 {
+    .why-me h2 {
       font-family: var(--font-display);
       font-size: clamp(1.75rem, 3.5vw, 2.75rem);
       font-weight: 700;
@@ -222,45 +181,59 @@
       text-align: center;
     }
 
-    .step {
-      display: flex;
-      gap: 1.25rem;
-      margin-bottom: 2rem;
+    .why-me-layout {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 3rem;
+      align-items: start;
     }
 
-    .step-number {
+    .why-me-photo {
+      display: flex;
+      justify-content: center;
+      padding-top: 0.5rem;
+    }
+
+    .why-me-photo img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-border);
+    }
+
+    .why-me-points {
+      list-style: none;
+    }
+
+    .why-me-points li {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .why-me-points li:last-child {
+      margin-bottom: 0;
+    }
+
+    .point-number {
       font-family: var(--font-display);
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: var(--color-accent);
       flex-shrink: 0;
-      width: 2rem;
+      width: 1.75rem;
       text-align: right;
+      line-height: 1.5;
     }
 
-    .step-content {
+    .point-text {
       flex: 1;
+      line-height: 1.65;
     }
 
-    .step-content strong {
+    .point-text strong {
       font-weight: 600;
-    }
-
-    .pricing-block {
-      margin-top: 2.5rem;
-      padding: 1.5rem 2rem;
-      background: var(--color-accent-light);
-      border-radius: 8px;
-    }
-
-    .pricing-block p {
-      margin-bottom: 0.75rem;
-    }
-
-    .pricing-block p:last-child {
-      margin-bottom: 0;
-      font-size: 0.95rem;
-      color: var(--color-text-secondary);
     }
 
     /* CTA Section */
@@ -270,7 +243,7 @@
     }
 
     .cta-inner {
-      max-width: 1080px;
+      max-width: 720px;
       margin: 0 auto;
     }
 
@@ -280,30 +253,91 @@
       font-weight: 700;
       line-height: 1.2;
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
     }
 
-    .cta-grid {
+    /* Pricing Card */
+    .pricing-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto 3rem auto;
+      box-shadow: 0 4px 16px rgba(45,45,45,0.05);
+    }
+
+    .pricing-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .pricing-card .price {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      text-align: left;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pricing-card ul li {
+      padding: 0.4rem 0;
+      font-size: 1rem;
+      color: var(--color-text);
+      position: relative;
+      padding-left: 1.25rem;
+    }
+
+    .pricing-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-accent);
+    }
+
+    .pricing-card .subtext {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Contact Grid */
+    .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 2rem;
     }
 
-    .cta-card {
+    .contact-card {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: 12px;
       padding: 2rem;
     }
 
-    .cta-card h3 {
+    .contact-card h3 {
       font-family: var(--font-display);
       font-size: 1.25rem;
       font-weight: 700;
       margin-bottom: 0.75rem;
     }
 
-    .cta-card p {
+    .contact-card p {
       font-size: 0.95rem;
       color: var(--color-text-secondary);
       margin-bottom: 1.25rem;
@@ -358,6 +392,14 @@
       font-weight: 600;
     }
 
+    .cal-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
     /* Footer */
     footer {
       background: var(--color-bg);
@@ -400,32 +442,29 @@
         max-height: 50vh;
       }
 
-      .cta-grid {
+      .why-me-layout {
         grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 1024px) and (min-width: 769px) {
-      .cta-grid {
-        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
       }
 
-      .cta-card:last-child {
-        grid-column: 1 / -1;
-        max-width: 400px;
-        justify-self: center;
+      .why-me-photo {
+        justify-content: center;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- Section 1: Hero -->
   <section class="hero" id="top">
     <div class="hero-inner">
       <div class="hero-text">
-        <h1>Two locations, 71 reviews, and the kind of reputation where clients describe your buttercream with genuine emotion.</h1>
-        <p class="subhead">You've built something real in Grand Haven and Spring Lake. The operational side can match.</p>
+        <h1>71 reviews and you respond to nearly every one of them, personally, with real specifics. That's not a marketing strategy. That's just how you run things.</h1>
+        <p class="subhead">The same care you put into every response can show up in how the rest of the business operates behind the scenes.</p>
         <a href="#contact" class="btn-cta">Let's Talk About Grand Finale</a>
       </div>
       <div class="hero-image-card">
@@ -435,74 +474,80 @@
     </div>
   </section>
 
-  <!-- Body Part 1: Their Business -->
+  <!-- Section 2: Body — Part 1: Their Business -->
   <section class="body-part1">
     <div class="body-content">
-      <p>Grand Finale is operating as two distinct businesses under one name. The Grand Haven deli and bakeshop runs counter service with coffee, pastries, sandwiches, and a custom cake operation that clearly drives significant revenue. The Spring Lake bistro is a full-service restaurant with a bar and a patisserie program. That range, from a breakfast pastry run to a full dinner with wine, is unusual for an independent operation this size.</p>
-      <p>What comes through in the reviews is how personal the custom order experience is. Customers describe tasting boxes, consultations about their events, and specific flavor work (lemon raspberry, carrot cake, chocolate ganache) that sounds more like a patisserie than a neighborhood bakery. Multiple people mention being accommodated on dietary restrictions without being treated like an inconvenience. And you respond to nearly every review individually, with real specifics, not templates. That level of attention is doing serious brand-building work whether you think of it that way or not.</p>
+      <p>Clients mention your Italian buttercream like it's a personal experience, not a product. Multiple reviewers call out how you handle dietary restrictions without making it feel like an inconvenience. And the deli side is building its own reputation now. The Bourdain sandwich and muffuletta are showing up in recent reviews as standalone reasons to visit, separate from the cakes that put you on the map.</p>
     </div>
   </section>
 
   <hr class="section-divider">
 
-  <!-- Body Part 2: The Offer -->
+  <!-- Section 2: Body — Part 2: The Offer -->
   <section class="body-part2">
     <div class="body-content">
-      <p>A business running two locations with custom orders, wholesale, counter service, and full-service dining has a lot of moving parts. Whether it's order intake that starts with a phone call and ends on a sticky note, production planning that lives in someone's head, or scheduling across two kitchens that happens over text, you've probably thought about what it would look like if some of that just ran on its own. I show up, spend time understanding how both locations actually operate, and build whatever saves the most time or money. Could be connecting your ordering workflow so nothing falls through. Could be a dashboard that makes cross-location coordination less manual. Could be something I haven't thought of yet that becomes obvious after walking around for a couple hours. One day, on-site, building real things. Sometimes that's the whole project. Sometimes it's the start of something bigger.</p>
+      <p>Whether it's custom order details scattered across phone calls, texts, and sticky notes, or production planning that still lives mostly in someone's head, a bakery running two locations with this much range has moving pieces that don't need a person touching them every time. You've probably had the thought more than once. I show up at your location, spend time learning how things actually run between both shops, and build whatever saves you the most time or headaches. Could be a day, could turn into something bigger. Everything is documented, you're trained on it, and it works without me.</p>
     </div>
   </section>
 
-  <!-- About Nick -->
-  <section class="about">
-    <div class="about-inner">
-      <h2>Who I am</h2>
-      <img src="nick-headshot.png" alt="Nick Dahlhoff" class="about-photo">
-      <p class="about-bio">I'm Nick Dahlhoff, based in West Michigan. I help local businesses figure out where AI tools and better systems can actually save them time and money. Every business is different, so I start by understanding yours. Then I build exactly what you need.</p>
-      <p class="about-credential">AI systems builder for small businesses: custom software, automation, and process improvement.</p>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="how-it-works">
-    <div class="how-inner">
-      <h2>Here's how it works</h2>
-
-      <div class="step">
-        <span class="step-number">1.</span>
-        <div class="step-content"><strong>We talk first.</strong> Quick call to understand your situation. No sales pitch. If it doesn't seem like a fit, I'll tell you.</div>
-      </div>
-
-      <div class="step">
-        <span class="step-number">2.</span>
-        <div class="step-content"><strong>I come to you.</strong> I spend half a day at your business: walking around, watching how things work, asking questions, mapping out your systems and figuring out where the biggest opportunities are.</div>
-      </div>
-
-      <div class="step">
-        <span class="step-number">3.</span>
-        <div class="step-content"><strong>I start building.</strong> The other half of the day, I work on your highest-priority issue. Could be quick wins you see results from immediately, or the start of something bigger.</div>
-      </div>
-
-      <div class="step">
-        <span class="step-number">4.</span>
-        <div class="step-content"><strong>You decide what's next.</strong> Some people just want the one day. Others want ongoing help building bigger systems. Either way works.</div>
-      </div>
-
-      <div class="pricing-block">
-        <p><strong>One day of hands-on work, $750.</strong> Covers research, implementation, and a follow-up check-in.</p>
-        <p>For businesses that want to go deeper, ongoing project work is available. We figure that out together after the first day.</p>
+  <!-- Section 3: Why Me -->
+  <section class="why-me">
+    <div class="why-me-inner">
+      <h2>Why me</h2>
+      <div class="why-me-layout">
+        <div class="why-me-photo">
+          <img src="nick-headshot.png" alt="Nick Dahlhoff">
+        </div>
+        <ol class="why-me-points">
+          <li>
+            <span class="point-number">1</span>
+            <span class="point-text"><strong>AI expert.</strong> I work with AI tools every day — workflow automation, content strategy, data analysis, software development. I know what actually works and what's hype.</span>
+          </li>
+          <li>
+            <span class="point-number">2</span>
+            <span class="point-text"><strong>Built and sold a business.</strong> I built a language learning website from nothing and sold it for $960K. I understand what it takes to run a business because I've done it.</span>
+          </li>
+          <li>
+            <span class="point-number">3</span>
+            <span class="point-text"><strong>I show up.</strong> I come to your location, learn how your business actually runs, and build what you need. Not a Zoom call. Not a slide deck.</span>
+          </li>
+          <li>
+            <span class="point-number">4</span>
+            <span class="point-text"><strong>One person, not an agency.</strong> You work directly with me. No account managers, no juniors, no handoffs.</span>
+          </li>
+          <li>
+            <span class="point-number">5</span>
+            <span class="point-text"><strong>Built to last without me.</strong> Everything I build is documented and yours to keep. You don't need me around for it to work.</span>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- Section 4: CTA -->
   <section class="cta-section" id="contact">
     <div class="cta-inner">
-      <h2>Interested? Let's talk.</h2>
+      <h2>Let's talk.</h2>
 
-      <div class="cta-grid">
+      <!-- Pricing Card -->
+      <div class="pricing-card">
+        <h3>On-Site Consulting</h3>
+        <div class="price">$750 / day</div>
+        <ul>
+          <li>On-site at your location (West Michigan)</li>
+          <li>Research + planning + implementation</li>
+          <li>Documentation + training</li>
+          <li>Follow-up support included</li>
+        </ul>
+        <p class="subtext">Ongoing and larger projects available on request</p>
+        <a href="https://buy.stripe.com/test_8x214o5MnftB2bUbt7dfG00" target="_blank" rel="noopener" class="btn-cta" style="width:100%;text-align:center;">Pay Now — $750</a>
+      </div>
+
+      <!-- Contact Options -->
+      <div class="contact-grid">
         <!-- Contact Form -->
-        <div class="cta-card">
-          <h3>Send a message</h3>
+        <div class="contact-card">
+          <h3>Send me a message</h3>
           <form id="contactForm">
             <div class="form-group">
               <label for="name">Name</label>
@@ -532,28 +577,21 @@
         </div>
 
         <!-- Cal.com Booking -->
-        <div class="cta-card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
-          <h3>Book a call</h3>
-          <p>No pitch, just a conversation. 30 minutes to see if it makes sense.</p>
+        <div class="contact-card cal-card">
+          <h3>Book a 30-minute call</h3>
+          <p>No pitch, just a conversation.</p>
           <button
             class="btn-cta"
             data-cal-namespace=""
             data-cal-link="nickdahlhoff/30min"
             data-cal-config='{"layout":"month_view"}'
-          >Book a 30-Minute Call</button>
-        </div>
-
-        <!-- Payment -->
-        <div class="cta-card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
-          <h3>Ready to go?</h3>
-          <p>Book your one-day engagement now — $750</p>
-          <a href="https://buy.stripe.com/test_8x214o5MnftB2bUbt7dfG00" target="_blank" rel="noopener" class="btn-cta">Pay Now — $750</a>
+          >Book a Call</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Section 5: Footer -->
   <footer>
     <p>Nick Dahlhoff | West Michigan | <a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
     <p>&copy; 2026</p>
@@ -606,7 +644,7 @@
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Send Message';
               }
-              alert('Something went wrong — please try again or email ndahlhoff10@gmail.com directly.');
+              alert('Something went wrong. Please try again or email ndahlhoff10@gmail.com directly.');
             });
         });
       }
