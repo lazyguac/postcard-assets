@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grand Finale Deli & Bakeshop | Nick Dahlhoff, AI Consulting</title>
-  <meta name="description" content="Custom systems and automation for Grand Finale Deli & Bakeshop in Grand Haven and Spring Lake, built on-site by Nick Dahlhoff.">
+  <meta name="description" content="On-site AI consulting for Grand Finale Deli & Bakeshop — systems and automation built at both locations by Nick Dahlhoff in West Michigan.">
   <meta property="og:title" content="Grand Finale Deli & Bakeshop | Nick Dahlhoff, AI Consulting">
-  <meta property="og:description" content="Custom systems and automation for Grand Finale Deli & Bakeshop in Grand Haven and Spring Lake, built on-site by Nick Dahlhoff.">
+  <meta property="og:description" content="On-site AI consulting for Grand Finale Deli & Bakeshop — systems and automation built at both locations by Nick Dahlhoff in West Michigan.">
   <meta property="og:image" content="hero.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,16 +40,23 @@
 
     body {
       font-family: var(--font-body);
-      color: var(--color-text);
-      background: var(--color-bg);
-      line-height: 1.7;
       font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--color-text);
+      background-color: var(--color-bg);
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Hero Section */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Hero */
     .hero {
-      background: var(--color-bg);
+      background-color: var(--color-bg);
       min-height: 80vh;
       display: flex;
       align-items: center;
@@ -58,12 +65,16 @@
     }
 
     .hero-inner {
-      max-width: 1280px;
-      width: 100%;
       display: grid;
       grid-template-columns: 55% 45%;
-      gap: 3rem;
       align-items: center;
+      gap: 3rem;
+      max-width: 1280px;
+      width: 100%;
+    }
+
+    .hero-text {
+      grid-column: 1;
     }
 
     .hero-text h1 {
@@ -75,85 +86,84 @@
       margin-bottom: 1.25rem;
     }
 
-    .hero-text .subhead {
-      font-family: var(--font-body);
+    .hero-text p {
       font-size: 1.2rem;
       color: var(--color-text-secondary);
       line-height: 1.6;
-      margin-bottom: 2rem;
+      margin-bottom: 0;
     }
 
-    .btn-cta {
+    .hero-image {
+      grid-column: 2;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(45, 45, 45, 0.08);
+    }
+
+    .hero-image img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero-cta {
+      grid-column: 1;
+      margin-top: 0.5rem;
+    }
+
+    .btn-primary {
       display: inline-block;
-      background: var(--color-accent);
-      color: #fff;
+      background-color: var(--color-accent);
+      color: #FFFFFF;
       font-family: var(--font-body);
       font-size: 1rem;
       font-weight: 600;
-      padding: 16px 32px;
+      padding: 16px 36px;
       border-radius: 8px;
       text-decoration: none;
       border: none;
       cursor: pointer;
-      transition: background 0.2s ease, transform 0.2s ease;
+      transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
-    .btn-cta:hover {
-      background: var(--color-accent-hover);
+    .btn-primary:hover {
+      background-color: var(--color-accent-hover);
       transform: translateY(-1px);
     }
 
-    .btn-cta:focus {
-      outline: 3px solid var(--color-accent);
+    .btn-primary:focus {
+      outline: 2px solid var(--color-accent);
       outline-offset: 2px;
     }
 
-    .hero-image-card {
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 32px rgba(45,45,45,0.08);
-    }
-
-    .hero-image-card img {
-      display: block;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    /* Body Sections */
+    /* Body Part 1 */
     .body-part1 {
-      background: var(--color-bg);
+      background-color: var(--color-bg);
       padding: clamp(60px, 8vw, 120px) 24px;
     }
 
-    .body-part2 {
-      background: var(--color-surface-alt);
-      padding: clamp(60px, 8vw, 120px) 24px;
-    }
-
-    .body-content {
+    .body-part1-inner {
       max-width: 720px;
       margin: 0 auto;
     }
 
-    .body-content p {
+    .body-part1-inner p:first-child {
+      font-size: 1.25rem;
+      border-left: 3px solid rgba(212, 133, 58, 0.3);
+      padding-left: 1.25rem;
       margin-bottom: 1.5rem;
-      line-height: 1.7;
     }
 
-    .body-content p:last-child {
+    .body-part1-inner p {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .body-part1-inner p:last-child {
       margin-bottom: 0;
     }
 
-    .body-content p:first-child {
-      font-size: 1.25rem;
-    }
-
-    .body-part1 .body-content p:first-child {
-      border-left: 3px solid rgba(212, 133, 58, 0.3);
-      padding-left: 1.25rem;
-    }
-
+    /* Amber rule separator */
     .section-divider {
       max-width: 720px;
       margin: 0 auto;
@@ -161,27 +171,35 @@
       border-top: 1px solid rgba(212, 133, 58, 0.2);
     }
 
-    /* Why Me Section */
+    /* Body Part 2 */
+    .body-part2 {
+      background-color: var(--color-surface-alt);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part2-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part2-inner p {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .body-part2-inner p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Why Me */
     .why-me {
-      background: var(--color-surface);
+      background-color: var(--color-surface);
       padding: clamp(60px, 8vw, 120px) 24px;
     }
 
     .why-me-inner {
       max-width: 900px;
       margin: 0 auto;
-    }
-
-    .why-me h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
-
-    .why-me-layout {
       display: grid;
       grid-template-columns: 180px 1fr;
       gap: 3rem;
@@ -190,7 +208,8 @@
 
     .why-me-photo {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       padding-top: 0.5rem;
     }
 
@@ -202,81 +221,85 @@
       border: 3px solid var(--color-border);
     }
 
-    .why-me-points {
+    .why-me-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-text);
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .why-me-list {
       list-style: none;
     }
 
-    .why-me-points li {
+    .why-me-list li {
       display: flex;
       gap: 1rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
+      text-align: left;
     }
 
-    .why-me-points li:last-child {
+    .why-me-list li:last-child {
       margin-bottom: 0;
     }
 
-    .point-number {
+    .why-me-number {
       font-family: var(--font-display);
-      font-size: 1.35rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--color-accent);
+      line-height: 1.4;
       flex-shrink: 0;
-      width: 1.75rem;
-      text-align: right;
-      line-height: 1.5;
+      width: 2rem;
     }
 
-    .point-text {
-      flex: 1;
-      line-height: 1.65;
+    .why-me-list li div {
+      font-size: 1.125rem;
+      line-height: 1.6;
     }
 
-    .point-text strong {
+    .why-me-list li strong {
       font-weight: 600;
     }
 
     /* CTA Section */
     .cta-section {
-      background: var(--color-bg);
+      background-color: var(--color-bg);
       padding: clamp(60px, 8vw, 120px) 24px;
     }
 
-    .cta-inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .cta-section h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      font-weight: 700;
-      line-height: 1.2;
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-
     /* Pricing Card */
-    .pricing-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: 12px;
-      padding: 2.5rem;
-      text-align: center;
-      max-width: 500px;
-      margin: 0 auto 3rem auto;
-      box-shadow: 0 4px 16px rgba(45,45,45,0.05);
+    .pricing-card-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: clamp(48px, 6vw, 80px);
     }
 
-    .pricing-card h3 {
+    .pricing-card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(45, 45, 45, 0.06);
+      padding: 3rem;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .pricing-card h2 {
       font-family: var(--font-display);
-      font-size: 1.5rem;
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
       font-weight: 700;
+      color: var(--color-text);
       margin-bottom: 0.75rem;
     }
 
     .pricing-card .price {
-      font-size: 2.25rem;
+      font-family: var(--font-display);
+      font-size: 2.5rem;
       font-weight: 700;
       color: var(--color-accent);
       margin-bottom: 1.5rem;
@@ -284,11 +307,8 @@
 
     .pricing-card ul {
       list-style: none;
-      margin-bottom: 1.5rem;
       text-align: left;
-      max-width: 320px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-bottom: 1.5rem;
     }
 
     .pricing-card ul li {
@@ -296,63 +316,65 @@
       font-size: 1rem;
       color: var(--color-text);
       position: relative;
-      padding-left: 1.25rem;
+      padding-left: 1.5rem;
     }
 
     .pricing-card ul li::before {
-      content: '';
+      content: "\2713";
+      color: var(--color-accent);
+      font-weight: 700;
       position: absolute;
       left: 0;
-      top: 0.75rem;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--color-accent);
     }
 
     .pricing-card .subtext {
       font-size: 0.875rem;
       color: var(--color-text-secondary);
+      margin-bottom: 1.75rem;
+    }
+
+    .pricing-card .btn-primary {
+      display: inline-block;
+      width: auto;
+    }
+
+    /* Contact Options */
+    .contact-options {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .contact-form-card,
+    .book-call-card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+
+    .contact-form-card h3,
+    .book-call-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-text);
       margin-bottom: 1.5rem;
     }
 
-    /* Contact Grid */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .contact-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: 12px;
-      padding: 2rem;
-    }
-
-    .contact-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-
-    .contact-card p {
-      font-size: 0.95rem;
-      color: var(--color-text-secondary);
-      margin-bottom: 1.25rem;
-    }
-
     .form-group {
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
     }
 
     .form-group label {
       display: block;
       font-size: 0.875rem;
       font-weight: 600;
+      color: var(--color-text-secondary);
       margin-bottom: 0.35rem;
-      color: var(--color-text);
     }
 
     .form-group input,
@@ -362,8 +384,8 @@
       font-family: var(--font-body);
       font-size: 1rem;
       border: 1px solid var(--color-border);
-      border-radius: 6px;
-      background: var(--color-bg);
+      border-radius: 8px;
+      background-color: var(--color-bg);
       color: var(--color-text);
       transition: border-color 0.2s ease;
     }
@@ -377,161 +399,247 @@
 
     .form-group textarea {
       resize: vertical;
-      min-height: 100px;
+      min-height: 120px;
     }
 
-    .form-success {
+    #contactForm .btn-primary {
+      width: 100%;
+      text-align: center;
+    }
+
+    #formSuccess {
       display: none;
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 0;
     }
 
-    .form-success p {
-      font-size: 1.125rem;
+    #formSuccess h4 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
       color: var(--color-success);
-      font-weight: 600;
+      margin-bottom: 0.5rem;
     }
 
-    .cal-card {
+    #formSuccess p {
+      color: var(--color-text-secondary);
+      font-size: 1rem;
+    }
+
+    .book-call-card {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       text-align: center;
+    }
+
+    .book-call-card p {
+      color: var(--color-text-secondary);
+      font-size: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background-color: transparent;
+      color: var(--color-accent);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 8px;
+      border: 2px solid var(--color-accent);
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+    }
+
+    .btn-outline:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
     }
 
     /* Footer */
-    footer {
-      background: var(--color-bg);
+    .footer {
+      background-color: var(--color-bg);
       border-top: 1px solid var(--color-border);
-      padding: 2rem 24px;
+      padding: 2.5rem 24px;
       text-align: center;
-      font-size: 0.875rem;
-      color: var(--color-text-secondary);
     }
 
-    footer a {
+    .footer p {
+      font-size: 0.875rem;
       color: var(--color-text-secondary);
-      text-decoration: underline;
+      margin-bottom: 0.35rem;
+    }
+
+    .footer p:last-child {
+      margin-bottom: 0;
+    }
+
+    .footer a {
+      color: var(--color-accent);
+      text-decoration: none;
       transition: color 0.2s ease;
     }
 
-    footer a:hover {
-      color: var(--color-accent);
+    .footer a:hover {
+      color: var(--color-accent-hover);
     }
 
     /* Responsive */
     @media (max-width: 768px) {
       .hero {
         min-height: auto;
-        padding: 40px 20px;
+        padding: 48px 24px;
       }
 
       .hero-inner {
         grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .hero-text {
-        order: 1;
         text-align: center;
       }
 
-      .hero-image-card {
+      .hero-text {
+        grid-column: 1;
+        order: 1;
+      }
+
+      .hero-image {
+        grid-column: 1;
         order: 2;
         max-height: 50vh;
       }
 
-      .why-me-layout {
+      .hero-image img {
+        max-height: 50vh;
+        object-fit: cover;
+      }
+
+      .hero-cta {
+        grid-column: 1;
+        order: 3;
+        text-align: center;
+      }
+
+      .why-me-inner {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        text-align: left;
       }
 
       .why-me-photo {
-        justify-content: center;
+        align-items: center;
       }
 
-      .contact-grid {
+      .why-me-content h2 {
+        text-align: left;
+      }
+
+      .contact-options {
         grid-template-columns: 1fr;
+      }
+
+      .pricing-card {
+        padding: 2rem;
+      }
+    }
+
+    /* Print */
+    @media print {
+      body {
+        font-size: 12pt;
+        background: #fff;
+      }
+
+      .btn-primary,
+      .btn-outline,
+      .contact-form-card,
+      .book-call-card {
+        display: none;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Section 1: Hero -->
-  <section class="hero" id="top">
+  <!-- Hero Section -->
+  <section class="hero">
     <div class="hero-inner">
       <div class="hero-text">
-        <h1>71 reviews and you respond to nearly every one of them, personally, with real specifics. That's not a marketing strategy. That's just how you run things.</h1>
-        <p class="subhead">The same care you put into every response can show up in how the rest of the business operates behind the scenes.</p>
-        <a href="#contact" class="btn-cta">Let's Talk About Grand Finale</a>
+        <h1>The deli side is earning its own following now. Regulars are showing up specifically for the Bourdain and the muffuletta, separate from the cakes that built your name.</h1>
+        <p>When the food keeps getting better across two locations, the stuff behind the scenes should keep up.</p>
       </div>
-      <div class="hero-image-card">
-        <!-- Hero image generated from prompt: warm pencil-and-ink illustration showing split scene of two connected bakery locations -->
-        <img src="hero.png" alt="Illustration of Grand Finale's two bakery locations in warm pencil-and-ink style">
+      <div class="hero-image">
+        <!-- Hero image: a lunchtime moment inside a small-town deli bakeshop: a man at the counter unwrapping a thick muffuletta sandwich while the bakery display case glows behind him with decorated cakes and pastries. -->
+        <img src="hero.png" alt="A lunchtime moment inside Grand Finale Deli & Bakeshop, with a muffuletta sandwich at the counter and decorated cakes in the display case behind">
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Let's Talk About Grand Finale</a>
       </div>
     </div>
   </section>
 
-  <!-- Section 2: Body — Part 1: Their Business -->
+  <!-- Body Part 1 — Their Business -->
   <section class="body-part1">
-    <div class="body-content">
-      <p>Clients mention your Italian buttercream like it's a personal experience, not a product. Multiple reviewers call out how you handle dietary restrictions without making it feel like an inconvenience. And the deli side is building its own reputation now. The Bourdain sandwich and muffuletta are showing up in recent reviews as standalone reasons to visit, separate from the cakes that put you on the map.</p>
+    <div class="body-part1-inner">
+      <p>People talk about your Italian buttercream like it changed something for them. That's not typical bakery praise. And you respond to almost every review personally, with real detail, not a template.</p>
+      <p>The Spring Lake bistro is pulling its weight too. Dinner service, the wine list, the atmosphere. Reviewers describe it as a genuinely different experience from the bakeshop, which is the whole point.</p>
     </div>
   </section>
 
   <hr class="section-divider">
 
-  <!-- Section 2: Body — Part 2: The Offer -->
+  <!-- Body Part 2 — The Offer -->
   <section class="body-part2">
-    <div class="body-content">
-      <p>Whether it's custom order details scattered across phone calls, texts, and sticky notes, or production planning that still lives mostly in someone's head, a bakery running two locations with this much range has moving pieces that don't need a person touching them every time. You've probably had the thought more than once. I show up at your location, spend time learning how things actually run between both shops, and build whatever saves you the most time or headaches. Could be a day, could turn into something bigger. Everything is documented, you're trained on it, and it works without me.</p>
+    <div class="body-part2-inner">
+      <p>Running two locations with different concepts means information moving between them constantly: who's making what, what's been ordered, what's running low, who's covering which shift. Add custom orders coming in by phone at all hours and production planning that probably still depends on one or two people's memory, and there's a lot happening every day that doesn't require judgment, just execution.</p>
+      <p>I come in, spend time at both locations understanding how things actually flow, and build whatever removes the most friction. For some businesses that's a day. For others it opens up something longer. Either way, you're trained on everything, it's documented, and your mornings go back to baking instead of managing the gaps between systems that don't talk to each other.</p>
     </div>
   </section>
 
-  <!-- Section 3: Why Me -->
+  <!-- Why Me -->
   <section class="why-me">
     <div class="why-me-inner">
-      <h2>Why me</h2>
-      <div class="why-me-layout">
-        <div class="why-me-photo">
-          <img src="nick-headshot.png" alt="Nick Dahlhoff">
-        </div>
-        <ol class="why-me-points">
+      <div class="why-me-photo">
+        <img src="nick-headshot.png" alt="Nick Dahlhoff">
+      </div>
+      <div class="why-me-content">
+        <h2>Why me</h2>
+        <ol class="why-me-list">
           <li>
-            <span class="point-number">1</span>
-            <span class="point-text"><strong>AI expert.</strong> I work with AI tools every day — workflow automation, content strategy, data analysis, software development. I know what actually works and what's hype.</span>
+            <span class="why-me-number">1</span>
+            <div><strong>AI expert.</strong> I work with AI tools every day — workflow automation, content strategy, data analysis, software development. I know what actually works and what's hype.</div>
           </li>
           <li>
-            <span class="point-number">2</span>
-            <span class="point-text"><strong>Built and sold a business.</strong> I built a language learning website from nothing and sold it for $960K. I understand what it takes to run a business because I've done it.</span>
+            <span class="why-me-number">2</span>
+            <div><strong>Built and sold a business.</strong> I built a language learning website from nothing and sold it for $960K. I understand what it takes to run a business because I've done it.</div>
           </li>
           <li>
-            <span class="point-number">3</span>
-            <span class="point-text"><strong>I show up.</strong> I come to your location, learn how your business actually runs, and build what you need. Not a Zoom call. Not a slide deck.</span>
+            <span class="why-me-number">3</span>
+            <div><strong>I show up.</strong> I come to your location, learn how your business actually runs, and build what you need. Not a Zoom call. Not a slide deck.</div>
           </li>
           <li>
-            <span class="point-number">4</span>
-            <span class="point-text"><strong>One person, not an agency.</strong> You work directly with me. No account managers, no juniors, no handoffs.</span>
+            <span class="why-me-number">4</span>
+            <div><strong>One person, not an agency.</strong> You work directly with me. No account managers, no juniors, no handoffs.</div>
           </li>
           <li>
-            <span class="point-number">5</span>
-            <span class="point-text"><strong>Built to last without me.</strong> Everything I build is documented and yours to keep. You don't need me around for it to work.</span>
+            <span class="why-me-number">5</span>
+            <div><strong>Built to last without me.</strong> Everything I build is documented and yours to keep. You don't need me around for it to work.</div>
           </li>
         </ol>
       </div>
     </div>
   </section>
 
-  <!-- Section 4: CTA -->
+  <!-- CTA Section -->
   <section class="cta-section" id="contact">
-    <div class="cta-inner">
-      <h2>Let's talk.</h2>
 
-      <!-- Pricing Card -->
+    <!-- Pricing Card -->
+    <div class="pricing-card-wrapper">
       <div class="pricing-card">
-        <h3>On-Site Consulting</h3>
+        <h2>On-Site Consulting</h2>
         <div class="price">$750 / day</div>
         <ul>
           <li>On-site at your location (West Michigan)</li>
@@ -540,115 +648,114 @@
           <li>Follow-up support included</li>
         </ul>
         <p class="subtext">Ongoing and larger projects available on request</p>
-        <a href="https://buy.stripe.com/test_8x214o5MnftB2bUbt7dfG00" target="_blank" rel="noopener" class="btn-cta" style="width:100%;text-align:center;">Pay Now — $750</a>
+        <a href="https://buy.stripe.com/test_8x214o5MnftB2bUbt7dfG00" target="_blank" rel="noopener" class="btn-primary">Pay Now — $750</a>
       </div>
+    </div>
 
-      <!-- Contact Options -->
-      <div class="contact-grid">
-        <!-- Contact Form -->
-        <div class="contact-card">
-          <h3>Send me a message</h3>
-          <form id="contactForm">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name">
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="you@example.com">
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone (optional)</label>
-              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" required placeholder="What's on your mind?"></textarea>
-            </div>
-            <input type="hidden" name="source" value="prospect_site">
-            <input type="hidden" name="slug" value="grand-finale-deli-bakeshop">
-            <!-- Honeypot -->
-            <input type="text" name="website" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off">
-            <button type="submit" class="btn-cta" style="width:100%;text-align:center;">Send Message</button>
-          </form>
-          <div id="formSuccess" class="form-success">
-            <p>Message sent. I'll be in touch soon.</p>
+    <!-- Contact Options -->
+    <div class="contact-options">
+
+      <!-- Contact Form -->
+      <div class="contact-form-card">
+        <h3>Send me a message</h3>
+        <form id="contactForm">
+          <input type="hidden" name="source" value="prospect_site">
+          <input type="hidden" name="slug" value="grand-finale-deli-bakeshop">
+          <!-- Honeypot -->
+          <input type="text" name="website" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name">
           </div>
-        </div>
-
-        <!-- Cal.com Booking -->
-        <div class="contact-card cal-card">
-          <h3>Book a 30-minute call</h3>
-          <p>No pitch, just a conversation.</p>
-          <button
-            class="btn-cta"
-            data-cal-namespace=""
-            data-cal-link="nickdahlhoff/30min"
-            data-cal-config='{"layout":"month_view"}'
-          >Book a Call</button>
+          <div class="form-group">
+            <label for="email">Email <span style="color:var(--color-accent);">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+          </div>
+          <div class="form-group">
+            <label for="message">Message <span style="color:var(--color-accent);">*</span></label>
+            <textarea id="message" name="message" required placeholder="What's on your mind?"></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+        <div id="formSuccess">
+          <h4>Message sent!</h4>
+          <p>I'll get back to you soon.</p>
         </div>
       </div>
+
+      <!-- Book a Call -->
+      <div class="book-call-card">
+        <h3>Book a 30-minute call</h3>
+        <p>No pitch, just a conversation.</p>
+        <button class="btn-outline" data-cal-namespace="" data-cal-link="nickdahlhoff/30min" data-cal-config='{"layout":"month_view"}'>Book a Call</button>
+      </div>
+
     </div>
   </section>
 
-  <!-- Section 5: Footer -->
-  <footer>
-    <p>Nick Dahlhoff | West Michigan | <a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Nick Dahlhoff | West Michigan</p>
+    <p><a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
     <p>&copy; 2026</p>
   </footer>
 
-  <!-- Cal.com Embed -->
-  <script type="text/javascript">
-    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", {origin:"https://app.cal.com"});
-    Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}}});
+  <!-- Contact Form Submission -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('contactForm');
+    var success = document.getElementById('formSuccess');
+    var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+        }
+
+        var data = {
+          name: form.elements.name.value || undefined,
+          email: form.elements.email.value,
+          phone: form.elements.phone.value || undefined,
+          message: form.elements.message.value,
+          source: 'prospect_site',
+          slug: form.elements.slug.value,
+          website: form.elements.website.value || undefined,
+        };
+
+        fetch('https://calculating-platypus-531.convex.site/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        })
+          .then(function(res) {
+            if (!res.ok) throw new Error('Submission failed');
+            form.style.display = 'none';
+            success.style.display = 'block';
+          })
+          .catch(function() {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Send Message';
+            }
+            alert('Something went wrong — please try again or email ndahlhoff10@gmail.com directly.');
+          });
+      });
+    }
+  });
   </script>
 
-  <!-- Contact Form Handler -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var form = document.getElementById('contactForm');
-      var success = document.getElementById('formSuccess');
-      var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
-
-      if (form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-          }
-
-          var data = {
-            name: form.elements.name.value || undefined,
-            email: form.elements.email.value,
-            phone: form.elements.phone.value || undefined,
-            message: form.elements.message.value,
-            source: 'prospect_site',
-            slug: form.elements.slug.value,
-            website: form.elements.website.value || undefined,
-          };
-
-          fetch('https://calculating-platypus-531.convex.site/leads', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data),
-          })
-            .then(function(res) {
-              if (!res.ok) throw new Error('Submission failed');
-              form.style.display = 'none';
-              success.style.display = 'block';
-            })
-            .catch(function() {
-              if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
-              }
-              alert('Something went wrong. Please try again or email ndahlhoff10@gmail.com directly.');
-            });
-        });
-      }
-    });
+  <!-- Cal.com Embed -->
+  <script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "", {origin:"https://cal.com"});
+  Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}}});
   </script>
 
 </body>
