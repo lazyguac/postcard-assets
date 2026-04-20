@@ -69,6 +69,12 @@
       line-height: 1;
     }
 
+    .logo img {
+      display: block;
+      width: clamp(120px, 14vw, 170px);
+      height: auto;
+    }
+
     .logo-text {
       font-family: var(--font-display);
       font-size: 1.5rem;
@@ -409,11 +415,17 @@
       text-align: center;
     }
 
-    .footer a {
-      color: #FFFFFF;
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       text-decoration: none;
-      font-family: var(--font-display);
-      font-size: 1.25rem;
+    }
+
+    .footer-logo img {
+      display: block;
+      width: clamp(120px, 13vw, 160px);
+      height: auto;
     }
 
     .footer a:hover {
