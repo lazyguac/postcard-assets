@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Control Electric + Clicki Referrals</title>
+  <meta name="description" content="See how Clicki's automated referral platform works with Control Electric's ServiceTitan to turn happy customers into new business.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #3B7A57;
+      --color-primary-dark: #2D5F44;
+      --color-primary-light: #5BA97B;
+      --color-green-tint: #E8F5E9;
+      --color-dark: #1A3C34;
+      --color-bg: #FAFAF5;
+      --color-bg-alt: #F5F3EE;
+      --color-surface: #FFFFFF;
+      --color-text: #1A1A2E;
+      --color-text-body: #374151;
+      --color-text-secondary: #6B7280;
+      --color-border: #E5E7EB;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--color-text-body);
+      background: var(--color-bg);
+    }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      padding: 16px 24px;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .logo-text {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--color-dark);
+    }
+
+    .logo-sub {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--color-primary);
+      text-transform: uppercase;
+    }
+
+    /* Hero */
+    .hero {
+      background: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      gap: 48px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-text h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-text p {
+      font-size: 1.125rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 2rem;
+      max-width: 520px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--color-primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary:focus {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+
+    .hero-image {
+      background: linear-gradient(135deg, #3B7A57 0%, #2D5F44 50%, #E8F5E9 100%);
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      aspect-ratio: 4/3;
+      width: 100%;
+    }
+
+    /* Problem Section */
+    .problem {
+      background: var(--color-surface);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .problem-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .problem-inner p {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: var(--color-text-body);
+      border-left: 3px solid rgba(59, 122, 87, 0.3);
+      padding-left: 24px;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      background: var(--color-green-tint);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .how-it-works-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .how-it-works h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--color-text);
+      margin-bottom: 48px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: var(--color-surface);
+      border-radius: 12px;
+      padding: 32px 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 16px;
+      color: var(--color-primary);
+    }
+
+    .feature-icon svg {
+      width: 48px;
+      height: 48px;
+    }
+
+    .feature-card h3 {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+    }
+
+    /* Social Proof */
+    .social-proof {
+      background: var(--color-surface);
+      padding: clamp(48px, 6vw, 80px) 24px;
+      text-align: center;
+    }
+
+    .social-proof-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .social-proof h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 400;
+      color: var(--color-text);
+      margin-bottom: 8px;
+    }
+
+    .social-proof p {
+      color: var(--color-text-secondary);
+      font-size: 1rem;
+    }
+
+    /* CTA / Booking */
+    .booking {
+      background: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .booking-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .booking h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--color-text);
+      margin-bottom: 12px;
+    }
+
+    .booking > .booking-inner > p {
+      color: var(--color-text-secondary);
+      margin-bottom: 32px;
+      font-size: 1.0625rem;
+    }
+
+    .booking-subtext {
+      color: var(--color-text-secondary);
+      margin-bottom: 32px;
+      font-size: 1.0625rem;
+    }
+
+    .btn-lg {
+      font-size: 1.125rem;
+      padding: 20px 40px;
+    }
+
+    .form-divider {
+      display: flex;
+      align-items: center;
+      margin: 40px 0;
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .form-divider::before,
+    .form-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+    }
+
+    .form-divider span {
+      padding: 0 16px;
+    }
+
+    .contact-form {
+      text-align: left;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--color-text);
+      transition: border-color 0.2s ease;
+      background: var(--color-bg);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(59, 122, 87, 0.1);
+    }
+
+    .form-group input[readonly] {
+      background: var(--color-bg-alt);
+      color: var(--color-text-secondary);
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    #formSuccess {
+      display: none;
+      background: var(--color-green-tint);
+      border: 1px solid var(--color-primary-light);
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 16px;
+      color: var(--color-primary-dark);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--color-dark);
+      color: #FFFFFF;
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+    }
+
+    .footer a:hover {
+      opacity: 0.8;
+    }
+
+    .footer p {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.875rem;
+      margin-top: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 48px 24px;
+      }
+
+      .hero-image {
+        aspect-ratio: 16/9;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .contact-form {
+        padding: 24px;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 375px) {
+      body {
+        font-size: 1rem;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+
+      .btn-primary {
+        width: 100%;
+        text-align: center;
+      }
+
+      .btn-lg {
+        padding: 16px 24px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="https://joinclicki.com" class="logo" target="_blank" rel="noopener">
+        <span class="logo-text">Clicki</span>
+        <span class="logo-sub">Referrals</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Control Electric has 248 five-star reviews. That's 248 referral sources waiting.</h1>
+        <p>Clicki connects to your ServiceTitan and turns every finished job into a chance for your happiest customers to send you their neighbors.</p>
+        <a href="#booking" class="btn-primary" data-track="hero_cta">Book a Demo</a>
+      </div>
+      <div class="hero-image" role="img" aria-label="Illustration of a thriving neighborhood with quality electrical service"></div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="problem">
+    <div class="problem-inner">
+      <p>Electrician clicks on Google cost $15 to $50 each in the Grand Rapids market, and that's before you factor in the leads who never pick up the phone. The average cost to actually acquire a new electrical customer through paid ads runs $120 to $300. Meanwhile, the customers who find you through a friend or neighbor close at two to three times the rate of those paid leads, spend more per job, and come back for future work. Most electrical businesses get 40-60% of their work from some form of referral already, but almost none of it is tracked or incentivized. You're leaving your most cost-effective growth channel completely on autopilot.</p>
+    </div>
+  </section>
+
+  <!-- How Clicki Works -->
+  <section class="how-it-works">
+    <div class="how-it-works-inner">
+      <h2>How it works</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 24c0-2.2 1.8-4 4-4h8c4.4 0 8 3.6 8 8s-3.6 8-8 8h-4" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <path d="M28 24c0 2.2-1.8 4-4 4H16c-4.4 0-8-3.6-8-8s3.6-8 8-8h4" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Plugs into ServiceTitan</h3>
+          <p>When a job is marked complete, Clicki automatically sends a referral ask to your customer. No manual follow-up needed.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="3"/>
+              <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="3"/>
+              <circle cx="24" cy="24" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Tracks every referral</h3>
+          <p>Know exactly who referred whom, which jobs they generated, and what each referral is worth.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="3"/>
+              <path d="M24 16v16M20 22l4-6 4 6M18 32h12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Instant payouts</h3>
+          <p>Referrers get paid through Venmo, ACH, or PayPal the moment their referral books. That speed keeps them sending more.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="14" y="8" width="20" height="32" rx="4" stroke="currentColor" stroke-width="3"/>
+              <line x1="20" y1="36" x2="28" y2="36" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>White-labeled app</h3>
+          <p>Your customers get a branded experience where they can track their own referrals and earnings.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 6L38 16v14c0 8-14 14-14 14S10 38 10 30V16L24 6z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M18 24l4 4 8-8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Compliance built in</h3>
+          <p>Fraud detection and 1099 reporting handled automatically so you never think about it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="social-proof">
+    <div class="social-proof-inner">
+      <h2>Loved by 400+ service businesses</h2>
+      <p>Including HVAC, plumbing, pest control, and lawn care companies.</p>
+    </div>
+  </section>
+
+  <!-- CTA / Book a Demo -->
+  <section class="booking" id="booking">
+    <div class="booking-inner">
+      <h2>See how Clicki works with Control Electric's ServiceTitan</h2>
+      <p class="booking-subtext">Book a free 15-minute demo. No pitch, just a walkthrough.</p>
+      <button
+        class="btn-primary btn-lg"
+        data-cal-namespace=""
+        data-cal-link="nickdahlhoff/clicki-demo"
+        data-cal-config='{"layout":"month_view"}'
+        data-track="book_demo"
+      >
+        Book a Free Demo
+      </button>
+
+      <div class="form-divider"><span>or send us a message</span></div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="you@company.com">
+        </div>
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" value="Control Electric" readonly>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Any questions or context..."></textarea>
+        </div>
+        <input type="hidden" name="source" value="clicki_demo_site">
+        <input type="hidden" name="slug" value="control-electric">
+        <button type="submit" class="btn-primary form-submit" data-track="contact_form">Send Message</button>
+        <div id="formSuccess">Thanks! We'll be in touch within 24 hours.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <a href="https://joinclicki.com" target="_blank" rel="noopener">Clicki Referrals</a>
+    <p>Automated referral programs for service businesses</p>
+  </footer>
+
+  <!-- Tracking -->
+  <script>
+  // UTM Parameter Capture
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+    var utmData = {};
+    utmKeys.forEach(function(key) {
+      var val = params.get(key);
+      if (val) utmData[key] = val;
+    });
+    if (Object.keys(utmData).length > 0) {
+      sessionStorage.setItem('clicki_utm', JSON.stringify(utmData));
+      console.log('[Clicki Tracking] UTM captured:', utmData);
+    }
+  })();
+
+  // CTA Click Tracking
+  document.querySelectorAll('[data-track]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var action = el.dataset.track;
+      var utmData = JSON.parse(sessionStorage.getItem('clicki_utm') || '{}');
+      console.log('[Clicki Tracking] CTA click:', action, utmData);
+    });
+  });
+
+  // Page View Tracking
+  (function() {
+    var utmData = JSON.parse(sessionStorage.getItem('clicki_utm') || '{}');
+    var slug = window.location.pathname.replace(/\//g, '').replace(/^clicki-/, '');
+    console.log('[Clicki Tracking] Page view:', {
+      slug: slug,
+      url: window.location.href,
+      referrer: document.referrer,
+      utm: utmData
+    });
+  })();
+
+  // Contact Form Submission
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = this.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Sent!';
+    this.style.opacity = '0.6';
+    document.getElementById('formSuccess').style.display = 'block';
+    var utmData = JSON.parse(sessionStorage.getItem('clicki_utm') || '{}');
+    console.log('[Clicki Tracking] Form submitted:', {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      company: document.getElementById('company').value,
+      message: document.getElementById('message').value,
+      source: 'clicki_demo_site',
+      slug: 'control-electric',
+      utm: utmData
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+  </script>
+
+  <!-- Cal.com Embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#3B7A57"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+
+</body>
+</html>
