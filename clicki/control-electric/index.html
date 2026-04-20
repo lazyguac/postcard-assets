@@ -478,7 +478,9 @@
         <p>Clicki connects to your ServiceTitan and turns every finished job into a chance for your happiest customers to send you their neighbors.</p>
         <a href="#booking" class="btn-primary" data-track="hero_cta">Book a Demo</a>
       </div>
-      <div class="hero-image" role="img" aria-label="Illustration of a thriving neighborhood with quality electrical service"></div>
+      <div class="hero-image">
+        <img src="hero.png" alt="Illustration of a thriving neighborhood with quality electrical service" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
+      </div>
     </div>
   </section>
 
@@ -634,7 +636,7 @@
   // Page View Tracking
   (function() {
     var utmData = JSON.parse(sessionStorage.getItem('clicki_utm') || '{}');
-    var slug = window.location.pathname.replace(/\//g, '').replace(/^clicki-/, '');
+    var slug = 'control-electric';
     console.log('[Clicki Tracking] Page view:', {
       slug: slug,
       url: window.location.href,
